@@ -1,4 +1,4 @@
-// Generated on 2015-10-22 using generator-angular 0.12.1
+// Generated on 2015-05-26 using generator-angular 0.11.1
 'use strict';
 
 // # Globbing
@@ -9,15 +9,11 @@
 var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 module.exports = function (grunt) {
 
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
-
-  // Automatically load required Grunt tasks
-  require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin',
-    ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
-  });
 
   // Configurable paths for the application
   var appConfig = {
@@ -50,7 +46,7 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer:server']
+        tasks: ['compass:server', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -76,12 +72,12 @@ module.exports = function (grunt) {
         livereload: 35729
       },
       proxies: [
-       {
-         context: '/api',
-         host: 'http://localhost',
-         port: '3000',
-         changeOrigin: true
-       }
+      {
+                context: '/api',
+                host: '0.0.0.0',
+                port: '3000',
+                changeOrigin: true
+            }
       ],
       livereload: {
         options: {
@@ -280,16 +276,12 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-      js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
       options: {
         assetsDirs: [
           '<%= yeoman.dist %>',
           '<%= yeoman.dist %>/images',
           '<%= yeoman.dist %>/styles'
-        ],
-        patterns: {
-          js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
-        }
+        ]
       }
     },
 
@@ -347,27 +339,15 @@ module.exports = function (grunt) {
           collapseWhitespace: true,
           conservativeCollapse: true,
           collapseBooleanAttributes: true,
-          removeCommentsFromCDATA: true
+          removeCommentsFromCDATA: true,
+          removeOptionalTags: true
         },
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html'],
+          src: ['*.html', 'views/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
-      }
-    },
-
-    ngtemplates: {
-      dist: {
-        options: {
-          module: 'clientApp',
-          htmlmin: '<%= htmlmin.dist.options %>',
-          usemin: 'scripts/scripts.js'
-        },
-        cwd: '<%= yeoman.app %>',
-        src: 'views/{,*/}*.html',
-        dest: '.tmp/templateCache.js'
       }
     },
 
@@ -403,6 +383,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
+            'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
           ]
@@ -487,7 +468,6 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
-    'ngtemplates',
     'concat',
     'ngAnnotate',
     'copy:dist',

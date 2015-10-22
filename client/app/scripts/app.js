@@ -42,25 +42,25 @@ angular
     $urlRouterProvider.otherwise('/login');
 
     $authProvider.configure({
-      apiUrl: 'http://localhost:3000'
-    })
+      apiUrl: '/api'
+    });
+  })
+  .run(function ($rootScope, $state) {
+    $rootScope.$on('auth:login-success', function(ev) {
+      $state.go('home');
+    });
 
-    .run(function ($rootScope, $state) {
-      $rootScope.$on('auth:login-success', function(ev) {
-        $state.go('home');
-      });
+    $rootScope.$on('auth:logout-success', function(ev) {
+      console.log('goodbye');
+    });
 
-      $rootScope.$on('auth:logout-success', function(ev) {
-        console.log('goodbye');
-      });
+    $rootScope.$on('auth:validation-success', function() {
+      console.log('validated, user is allowed');
+    });
 
-      $rootScope.$on('auth:validation-success', function() {
-        console.log('validated, user is allowed');
-      });
-
-      $rootScope.$on('auth:invalid', function() {
-        console.log('unauthorized');
-        $state.go('login');
-      });
+    $rootScope.$on('auth:invalid', function() {
+      console.log('unauthorized');
+      $state.go('login');
+    });
 
   });
