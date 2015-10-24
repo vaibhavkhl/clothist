@@ -9,10 +9,14 @@
  */
 angular.module('clientApp')
   .controller('SignupCtrl', function ($scope, $auth, $state, $rootScope) {
-    $scope.user = {};
+    $scope.user = {workpreference_attributes: [
+      {image_name: 'test image 1'},
+      {image_name: 'test image 2'}
+    ]};
 
     $scope.submit = function() {
-      $auth.submitRegistration($scope.user)
+      var params = {user: $scope.user};
+      $auth.submitRegistration(params)
         .then(function(response) {
           $rootScope.current_user = response.data.data;
           $state.go('home')
@@ -22,33 +26,4 @@ angular.module('clientApp')
         });
     };
 
-    $scope.userFields = [
-    {
-      key: 'email',
-      type: 'input',
-      templateOptions: {
-        type: 'email',
-        label: 'Email address',
-        placeholder: 'Enter email'
-      }
-    },
-    {
-      key: 'password',
-      type: 'input',
-      templateOptions: {
-        type: 'password',
-        label: 'Password',
-        placeholder: 'Password'
-      }
-    },
-    {
-      key: 'password_confirmation',
-      type: 'input',
-      templateOptions: {
-        type: 'password',
-        label: 'Confirm Password',
-        placeholder: 'Password'
-      }
-    }
-    ];
   });

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022180641) do
+ActiveRecord::Schema.define(version: 20151024120035) do
 
   create_table "users", force: true do |t|
     t.string   "provider",                            null: false
@@ -29,9 +29,11 @@ ActiveRecord::Schema.define(version: 20151022180641) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
     t.string   "phnno"
+    t.string   "dob"
     t.text     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -40,5 +42,14 @@ ActiveRecord::Schema.define(version: 20151022180641) do
   add_index "users", ["email"], name: "index_users_on_email"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
+
+  create_table "workpreferences", force: true do |t|
+    t.string   "image_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "workpreferences", ["user_id"], name: "index_workpreferences_on_user_id"
 
 end

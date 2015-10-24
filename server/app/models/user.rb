@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   before_save -> { skip_confirmation! }
 
+  has_many :workpreference
+  accepts_nested_attributes_for :workpreference
+
 end

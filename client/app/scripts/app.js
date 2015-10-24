@@ -23,10 +23,26 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+      .state('landing', {
+        url: '/landing',
+        templateUrl: 'views/landing.html',
+        controller: 'LandingCtrl'
+      })
       .state('signup', {
         url: '/signup',
         templateUrl: 'views/signup.html',
-        controller: 'SignupCtrl'
+        controller: 'SignupCtrl',
+        abstract: true
+      })
+      .state('signup.work', {
+        url: '/work',
+        templateUrl: 'views/work.html',
+        controller: 'WorkCtrl'
+      })
+      .state('signup.registration', {
+        url: '/registration',
+        templateUrl: 'views/registration.html',
+        controller: 'RegistrationCtrl'
       })
       .state('home', {
         url: '/home',
@@ -39,7 +55,7 @@ angular
         }
       });
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/landing');
 
     $authProvider.configure({
       apiUrl: '/api'
