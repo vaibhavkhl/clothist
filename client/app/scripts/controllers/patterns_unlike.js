@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:WorkCtrl
+ * @name clientApp.controller:PatternsUnlikeCtrl
  * @description
- * # WorkCtrl
+ * # PatternsUnlikeCtrl
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('WorkCtrl', function () {
+  .controller('PatternsUnlikeCtrl', function () {
     
   });

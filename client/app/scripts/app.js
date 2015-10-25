@@ -39,6 +39,26 @@ angular
         templateUrl: 'views/work.html',
         controller: 'WorkCtrl'
       })
+      .state('signup.leisure', {
+        url: '/leisure',
+        templateUrl: 'views/leisure.html',
+        controller: 'LeisureCtrl'
+      })
+      .state('signup.not_wear', {
+        url: '/not_wear',
+        templateUrl: 'views/not_wear.html',
+        controller: 'NotWearCtrl'
+      })
+      .state('signup.patterns', {
+        url: '/patterns',
+        templateUrl: 'views/patterns_unlike.html',
+        controller: 'PatternsUnlikeCtrl'
+      })
+      .state('signup.spend', {
+        url: '/spend',
+        templateUrl: 'views/spend.html',
+        controller: 'SpendCtrl'
+      })
       .state('signup.registration', {
         url: '/registration',
         templateUrl: 'views/registration.html',

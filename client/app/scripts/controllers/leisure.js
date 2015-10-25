@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:WorkCtrl
+ * @name clientApp.controller:LeisureCtrl
  * @description
- * # WorkCtrl
+ * # LeisureCtrl
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('WorkCtrl', function () {
+  .controller('LeisureCtrl', function () {
     
   });
