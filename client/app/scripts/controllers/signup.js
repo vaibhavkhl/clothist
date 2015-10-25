@@ -9,13 +9,11 @@
  */
 angular.module('clientApp')
   .controller('SignupCtrl', function ($scope, $auth, $state, $rootScope) {
-    $scope.user = {workpreference_attributes: [
-      {image_name: 'test image 1'},
-      {image_name: 'test image 2'}
-    ]};
+    $scope.user = {};
+    $scope.work = {};
 
     $scope.submit = function() {
-      var params = {user: $scope.user};
+      var params = getParams();
       $auth.submitRegistration(params)
         .then(function(response) {
           $rootScope.current_user = response.data.data;
@@ -25,5 +23,22 @@ angular.module('clientApp')
           $scope.errors = resp.data.errors.full_messages[0];
         });
     };
+
+    var getParams = function() {
+      var work_params = getWorkParams();
+      $scope.user.workpreference_attributes = work_params;
+      var params = {user: $scope.user};
+      return params;
+    }
+
+    var getWorkParams = function() {
+      var attributes = []
+      _.each($scope.work, function(val, key) {
+        if (val) {
+          attributes.push({image_name: key});
+        }
+      });
+      return attributes;
+    }
 
   });
