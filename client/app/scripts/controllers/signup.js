@@ -10,10 +10,14 @@
 angular.module('clientApp')
   .controller('SignupCtrl', function ($scope, $auth, $state, $rootScope) {
     $scope.user = {};
-    $scope.work = {};
+    $scope.workpreference = {};
+    $scope.leisurepreference = {};
+    $scope.dislikepreference = {};
+    $scope.patternsdislikepreference = {};
+    $scope.costpreference = {};
 
     $scope.submit = function() {
-      var params = getParams();
+      var params = getUserParams();
       $auth.submitRegistration(params)
         .then(function(response) {
           $rootScope.current_user = response.data.data;
@@ -24,16 +28,23 @@ angular.module('clientApp')
         });
     };
 
-    var getParams = function() {
-      var work_params = getWorkParams();
-      $scope.user.workpreference_attributes = work_params;
+    var getUserParams = function() {
+      $scope.user.workpreference_attributes = getParams($scope.workpreference);
+      $scope.user.leisurepreference_attributes =
+        getParams($scope.leisurepreference);
+      $scope.user.dislikepreference_attributes =
+        getParams($scope.notwearpreference);
+      $scope.user.patternsdislikepreference_attributes =
+        getParams($scope.unlikepatternspreference);
+      $scope.user.costpreference_attributes = getParams($scope.costpreference);
+
       var params = {user: $scope.user};
       return params;
     }
 
-    var getWorkParams = function() {
+    var getParams = function(model) {
       var attributes = []
-      _.each($scope.work, function(val, key) {
+      _.each(model, function(val, key) {
         if (val) {
           attributes.push({image_name: key});
         }

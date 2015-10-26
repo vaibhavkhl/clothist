@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024120035) do
+ActiveRecord::Schema.define(version: 20151026152017) do
+
+  create_table "costpreferences", force: true do |t|
+    t.string   "image_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "costpreferences", ["user_id"], name: "index_costpreferences_on_user_id"
+
+  create_table "leisurepreferences", force: true do |t|
+    t.string   "image_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leisurepreferences", ["user_id"], name: "index_leisurepreferences_on_user_id"
+
+  create_table "notwearpreferences", force: true do |t|
+    t.string   "image_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notwearpreferences", ["user_id"], name: "index_notwearpreferences_on_user_id"
+
+  create_table "unlikepatternspreferences", force: true do |t|
+    t.string   "image_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "unlikepatternspreferences", ["user_id"], name: "index_unlikepatternspreferences_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "provider",                            null: false

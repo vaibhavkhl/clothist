@@ -1,23 +1,23 @@
 'use strict';
 
-describe('Controller: SpendCtrl', function () {
+describe('Controller: NotWearPreferenceCtrl', function () {
 
   // load the controller's module
   beforeEach(module('clientApp'));
 
-  var SpendCtrl,
+  var NotWearCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    SpendCtrl = $controller('SpendCtrl', {
+    NotWearCtrl = $controller('NotWearPreferenceCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(SpendCtrl.awesomeThings.length).toBe(3);
+    expect(NotWearCtrl.awesomeThings.length).toBe(3);
   });
 });

@@ -1,23 +1,23 @@
 'use strict';
 
-describe('Controller: WorkCtrl', function () {
+describe('Controller: LeisurePreferenceCtrl', function () {
 
   // load the controller's module
   beforeEach(module('clientApp'));
 
-  var WorkCtrl,
+  var LeisureCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    WorkCtrl = $controller('WorkCtrl', {
+    LeisureCtrl = $controller('LeisurePreferenceCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(WorkCtrl.awesomeThings.length).toBe(3);
+    expect(LeisureCtrl.awesomeThings.length).toBe(3);
   });
 });

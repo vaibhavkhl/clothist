@@ -36,28 +36,28 @@ angular
       })
       .state('signup.work', {
         url: '/work',
-        templateUrl: 'views/work.html',
-        controller: 'WorkCtrl'
+        templateUrl: 'views/work_preference.html',
+        controller: 'WorkPreferenceCtrl'
       })
       .state('signup.leisure', {
         url: '/leisure',
-        templateUrl: 'views/leisure.html',
-        controller: 'LeisureCtrl'
+        templateUrl: 'views/leisure_preference.html',
+        controller: 'LeisurePreferenceCtrl'
       })
-      .state('signup.not_wear', {
-        url: '/not_wear',
-        templateUrl: 'views/not_wear.html',
-        controller: 'NotWearCtrl'
+      .state('signup.dislike', {
+        url: '/dislike',
+        templateUrl: 'views/dislike_preference.html',
+        controller: 'DislikePreferenceCtrl'
       })
       .state('signup.patterns', {
         url: '/patterns',
-        templateUrl: 'views/patterns_unlike.html',
-        controller: 'PatternsUnlikeCtrl'
+        templateUrl: 'views/patterns_dislike_preference.html',
+        controller: 'PatternsDislikePreferenceCtrl'
       })
-      .state('signup.spend', {
-        url: '/spend',
-        templateUrl: 'views/spend.html',
-        controller: 'SpendCtrl'
+      .state('signup.cost', {
+        url: '/cost',
+        templateUrl: 'views/cost_preference.html',
+        controller: 'CostPreferenceCtrl'
       })
       .state('signup.registration', {
         url: '/registration',
