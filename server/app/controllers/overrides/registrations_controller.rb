@@ -10,8 +10,8 @@ module Overrides
         :last_name, :email, :password, :password_confirmation,
         workpreference_attributes: [:image_name],
         leisurepreference_attributes: [:image_name],
-        notwearpreference_attributes: [:image_name],
-        unlikepatternspreference_attributes: [:image_name],
+        dislikepreference_attributes: [:image_name],
+        patternsdislikepreference_attributes: [:image_name],
         costpreference_attributes: [:image_name])
     end
 

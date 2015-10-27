@@ -12,11 +12,11 @@ class User < ActiveRecord::Base
   has_many :leisurepreference
   accepts_nested_attributes_for :leisurepreference
 
-  has_many :notwearpreference
-  accepts_nested_attributes_for :notwearpreference
+  has_many :dislikepreference
+  accepts_nested_attributes_for :dislikepreference
 
-  has_many :unlikepatternspreference
-  accepts_nested_attributes_for :unlikepatternspreference
+  has_many :patternsdislikepreference
+  accepts_nested_attributes_for :patternsdislikepreference
 
   has_one :costpreference
   accepts_nested_attributes_for :costpreference

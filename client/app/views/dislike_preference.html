@@ -7,18 +7,35 @@
 </div>
 
 <div class="row">
-  <div class="col-md-3">
-    <img src="images/formal_no_dress_code.jpg">
+
+  <div class="col-md-3" ng-click="dislikepreference.coloured_chino_image = !dislikepreference.coloured_chino_image">
+    <div class="image" ng-class="{ 'selected-image': dislikepreference.coloured_chino_image}">
+      <img src="images/dislike_coloured_chino.jpg">
+    </div>
+    <div class="text-center">Coloured Chino</div>
   </div>
-  <div class="col-md-3">
-    <img src="images/shirt_denim.jpg">
+
+  <div class="col-md-3" ng-click="dislikepreference.distressed_denim_image = !dislikepreference.distressed_denim_image">
+    <div class="image" ng-class="{ 'selected-image': dislikepreference.distressed_denim_image}">
+      <img src="images/dislike_distressed_denim.jpg">
+    </div>
+    <div class="text-center">Distresses Denim</div>
   </div>
-  <div class="col-md-3">
-    <img src="images/shirt_trouser_final.jpg">
+
+  <div class="col-md-3" ng-click="dislikepreference.half_sleeved_shirt_image = !dislikepreference.half_sleeved_shirt_image">
+    <div class="image" ng-class="{ 'selected-image': dislikepreference.half_sleeved_shirt_image}">
+      <img src="images/dislike_half_sleeved_shirt.jpg">
+    </div>
+    <div class="text-center">Half Sleeved Shirt</div>
   </div>
-  <div class="col-md-3">
-    <img src="images/suit.jpg">
+
+  <div class="col-md-3" ng-click="dislikepreference.vneck_image = !dislikepreference.vneck_image">
+    <div class="image" ng-class="{ 'selected-image': dislikepreference.vneck_image}">
+      <img src="images/dislike_vneck.jpg">
+    </div>
+    <div class="text-center">V Neck</div>
   </div>
+
 </div>
 
 <div class="row">

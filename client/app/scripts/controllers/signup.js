@@ -33,23 +33,24 @@ angular.module('clientApp')
       $scope.user.leisurepreference_attributes =
         getParams($scope.leisurepreference);
       $scope.user.dislikepreference_attributes =
-        getParams($scope.notwearpreference);
+        getParams($scope.dislikepreference);
       $scope.user.patternsdislikepreference_attributes =
-        getParams($scope.unlikepatternspreference);
+        getParams($scope.patternsdislikepreference);
       $scope.user.costpreference_attributes = getParams($scope.costpreference);
 
       var params = {user: $scope.user};
+      console.log(params)
       return params;
-    }
+    };
 
     var getParams = function(model) {
-      var attributes = []
+      var attributes = [];
       _.each(model, function(val, key) {
         if (val) {
           attributes.push({image_name: key});
         }
       });
       return attributes;
-    }
+    };
 
   });
