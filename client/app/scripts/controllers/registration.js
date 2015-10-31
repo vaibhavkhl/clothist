@@ -10,6 +10,33 @@
 angular.module('clientApp')
   .controller('RegistrationCtrl', function ($scope) {
     $scope.userFields = [
+      {
+        key: 'first_name',
+        type: 'input',
+        templateOptions: {
+          // type: 'email',
+          label: 'First Name',
+          placeholder: 'First Name'
+        }
+      },
+      {
+        key: 'last_name',
+        type: 'input',
+        templateOptions: {
+          // type: 'email',
+          label: 'Last Name',
+          placeholder: 'Last Name'
+        }
+      },
+      {
+        key: 'phn_no',
+        type: 'input',
+        templateOptions: {
+          // type: 'email',
+          label: 'Mobile Number',
+          placeholder: 'Mobile Number'
+        }
+      },
     {
       key: 'email',
       type: 'input',

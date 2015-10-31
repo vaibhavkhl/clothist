@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026165622) do
+ActiveRecord::Schema.define(version: 20151031134556) do
+
+  create_table "boxes", force: true do |t|
+    t.datetime "delivery_date"
+    t.string   "return_day"
+    t.text     "special_instructions"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "boxes", ["user_id"], name: "index_boxes_on_user_id"
 
   create_table "costpreferences", force: true do |t|
     t.string   "image_name"

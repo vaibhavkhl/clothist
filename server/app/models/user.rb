@@ -20,4 +20,6 @@ class User < ActiveRecord::Base
 
   has_one :costpreference
   accepts_nested_attributes_for :costpreference
+
+  has_many :box
 end

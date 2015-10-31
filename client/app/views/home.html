@@ -1,3 +1,39 @@
-<p>This is the home view.</p>
-
 <button ng-click="signOut()">Sign Out</button>
+
+<div class="container">
+  <div class="row">
+    <h3>Pick a date for delivery</h3>
+    <input type="date" ng-model="box.delivery_date">
+  </div>
+
+  <div class="row">
+    <h3>Select return days</h3>
+    <div>
+      <input type="radio" ng-model="box.return_day" value="1">
+      Within 24 hours - free return
+    </div>
+    <div>
+      <input type="radio" ng-model="box.return_day" value="2">
+      More than 24 hours - Rs. 200 return charges per day will be levied
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <h3>Delivery address</h3>
+      <textarea ng-model="address"></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <h3>Special instructions for the Box</h3>
+    <div>Mention anything specific you are looking for in the box,
+      or anthing else your stylist should know
+    </div>
+    <textarea type="text" ng-nodel="box.special_instructions"></textarea>
+  </div>
+
+  <div class="row">
+    <button class="btn btn-default" ng-click="scheduleBox()">Submit</button>
+  </div>
+</div>
