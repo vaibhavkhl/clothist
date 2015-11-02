@@ -4,8 +4,9 @@ Rails.application.routes.draw do
       registrations: 'overrides/registrations'
     }
 
-    resources :user
-    resources :box
+    resources :user, except: [:new, :edit]
+    resources :box, except: [:new, :edit]
+    resources :size_profiles, except: [:new, :edit]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

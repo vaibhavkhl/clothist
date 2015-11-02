@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031134556) do
+ActiveRecord::Schema.define(version: 20151102171036) do
 
   create_table "boxes", force: true do |t|
     t.datetime "delivery_date"
@@ -68,6 +68,25 @@ ActiveRecord::Schema.define(version: 20151031134556) do
   end
 
   add_index "patternsdislikepreferences", ["user_id"], name: "index_patternsdislikepreferences_on_user_id"
+
+  create_table "size_profiles", force: true do |t|
+    t.string   "tshirt_size"
+    t.string   "tshirt_brand"
+    t.string   "shirt_size"
+    t.string   "shirt_brand"
+    t.string   "shirt_fit"
+    t.string   "trouser_size"
+    t.string   "trouser_brand"
+    t.string   "trouser_fit"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "skin_color"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "size_profiles", ["user_id"], name: "index_size_profiles_on_user_id"
 
   create_table "unlikepatternspreferences", force: true do |t|
     t.string   "image_name"
