@@ -39,7 +39,7 @@
 .app-title{
   width: 100%!important;
   text-align: center;
-  color: #fff;
+  color: #fff!important;
   font-size: 30px;
 }
 .images-container{
@@ -51,6 +51,19 @@
   background-color: #ccc;
   color: #000;
   font-weight: semi-bold;
+}
+.box-header{
+  height:40px;
+  text-align: center;
+  background-color: #58330a;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  padding-top: 5px;
+  margin-bottom: 15px;
+}
+.box-details-container{
+  margin-bottom:20px;
 }
 
 /*For mobile layout*/

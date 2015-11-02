@@ -51,15 +51,6 @@ ActiveRecord::Schema.define(version: 20151031134556) do
 
   add_index "leisurepreferences", ["user_id"], name: "index_leisurepreferences_on_user_id"
 
-  create_table "notwearpreferences", force: true do |t|
-    t.string   "image_name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "notwearpreferences", ["user_id"], name: "index_notwearpreferences_on_user_id"
-
   create_table "patternsdislikepreferences", force: true do |t|
     t.string   "image_name"
     t.integer  "user_id"
@@ -68,15 +59,6 @@ ActiveRecord::Schema.define(version: 20151031134556) do
   end
 
   add_index "patternsdislikepreferences", ["user_id"], name: "index_patternsdislikepreferences_on_user_id"
-
-  create_table "unlikepatternspreferences", force: true do |t|
-    t.string   "image_name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "unlikepatternspreferences", ["user_id"], name: "index_unlikepatternspreferences_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "provider",                            null: false
