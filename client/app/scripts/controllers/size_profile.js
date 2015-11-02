@@ -8,10 +8,11 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('SizeProfileCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SizeProfileCtrl', function ($scope, $rootScope, size_profile) {
+    $scope.size_profile = {};
+
+    $scope.submit = function() {
+      $scope.size_profile.user_id = $rootScope.user.id;
+      size_profile.create($scope.size_profile);
+    };
   });
