@@ -73,6 +73,16 @@ angular
             return $auth.validateUser();
           }
         }
+      })
+      .state('home.sizeprofile', {
+        url: '/sizeprofile',
+        templateUrl: 'views/size_profile.html',
+        controller: 'SizeProfileCtrl'
+      })
+      .state('home.schedulebox', {
+        url: '/box',
+        templateUrl: 'views/schedule_box.html',
+        controller: 'ScheduleBoxCtrl'
       });
 
     $urlRouterProvider.otherwise('/landing');
@@ -82,6 +92,7 @@ angular
     });
   })
   .run(function ($rootScope, $state) {
+
     $rootScope.$on('auth:login-success', function(ev) {
       $state.go('home');
     });
@@ -92,6 +103,7 @@ angular
 
     $rootScope.$on('auth:validation-success', function() {
       console.log('validated, user is allowed');
+      $state.go('home');
     });
 
     $rootScope.$on('auth:invalid', function() {
