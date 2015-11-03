@@ -67,7 +67,12 @@ angular
       .state('home', {
         url: '/home',
         templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
+        controller: 'HomeCtrl',
+        resolve: {
+          auth: function($auth) {
+            return $auth.validateUser();
+          }
+        }
       })
       .state('home.sizeprofile', {
         url: '/sizeprofile',
