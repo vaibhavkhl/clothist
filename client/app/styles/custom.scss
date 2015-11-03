@@ -65,6 +65,25 @@
 .box-details-container{
   margin-bottom:20px;
 }
+.size_selection_main_container{
+  text-align: center;
+}
+.size_list_container{
+  height: 70px;
+  width: 300px;
+  margin: auto;
+}
+.size_list_container ul{
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+.size_list_container ul li{
+  width: 50px;
+  display: inline-block;
+  float: left;
+  border: 1px solid #000;
+}
 
 /*For mobile layout*/
 @media (max-width: 768px) {

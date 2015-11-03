@@ -1,3 +1,25 @@
-<p>Please complete your size profile to start getting boxes</p>
-
-<button ng-click="submit()">Submit</button>
+<div class="size_selection_main_container">
+	<div class="container">
+		<h3>Tell us about your sizes</h3>
+		<h3>{{size_selection[current_size_level].type}} of </h3>
+		<div class="size_list_container">
+			<ul>
+				<li ng-repeat="obj in size_selection[current_size_level].sizes">{{obj}}</li>
+			</ul>
+		</div>
+		<h3>Of brand</h3>
+		<div class="row">
+			<select>
+				<option>Option1</option>
+			</select>
+		</div>
+		<h3>and fit</h3>
+		<div class="row">
+			<select>
+				<option>Option1</option>
+			</select>
+		</div>
+		<br>
+		<button class="btn btn-grey" ng-click="goToNextLevel()">Next</button>
+	</div>
+</div>
