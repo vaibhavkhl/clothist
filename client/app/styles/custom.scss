@@ -1,9 +1,14 @@
 .header {
   border-bottom: 0;
+  background-color: #333;
+  margin-bottom: 0;
 }
 
 .navbar {
-  background-color: black;
+  background-color: #333;
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 0;
 }
 
 .image{
@@ -83,6 +88,58 @@
   display: inline-block;
   float: left;
   border: 1px solid #000;
+}
+
+.left-nav-container{
+    width: 300px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    height: 100%;
+    color: #fff;
+    border-top: 1px solid #ddd;
+}
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  animation-duration:0.5s;
+}
+
+
+.left-menu-bar{
+  margin:10px;
+  font-size: 2em;
+  color: #000;
+  float: left;
+  z-index: 100;
+  cursor: pointer;
 }
 
 /*For mobile layout*/

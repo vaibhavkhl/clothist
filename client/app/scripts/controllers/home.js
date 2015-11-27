@@ -9,6 +9,8 @@
  */
 angular.module('clientApp')
   .controller('HomeCtrl', function ($scope, $auth, $state, $rootScope, user) {
+    $rootScope.showLeftMenu = false;
+    console.log("home ctrl")
     $scope.signOut = function() {
   		$auth.signOut().then(function() {
   			$state.go('login');

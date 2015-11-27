@@ -72,7 +72,8 @@ angular
           auth: function($auth) {
             return $auth.validateUser();
           }
-        }
+        },
+        abstract:true
       })
       .state('home.sizeprofile', {
         url: '/sizeprofile',
