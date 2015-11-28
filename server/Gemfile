@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 gem 'rails-api'
 gem 'spring', :group => :development
 gem 'sqlite3', :group => :development
 gem 'pg', :group => :production
-gem 'devise_token_auth'
+gem 'devise_token_auth', '0.1.30'
 gem 'omniauth'
 gem 'rails_12factor', group: :production
 gem 'rspec-rails', '~> 3.0.0'
