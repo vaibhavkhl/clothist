@@ -50,6 +50,7 @@ starting rails server
 ```
 cd server
 bundle install
+bundle exec rake db:migrate
 rails s
 ```
 frontend-
