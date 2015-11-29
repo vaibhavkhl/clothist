@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031134556) do
+ActiveRecord::Schema.define(version: 20151102171036) do
 
-  create_table "boxes", force: true do |t|
+  create_table "boxes", force: :cascade do |t|
     t.datetime "delivery_date"
     t.string   "return_day"
     t.text     "special_instructions"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151031134556) do
 
   add_index "boxes", ["user_id"], name: "index_boxes_on_user_id"
 
-  create_table "costpreferences", force: true do |t|
+  create_table "costpreferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20151031134556) do
 
   add_index "costpreferences", ["user_id"], name: "index_costpreferences_on_user_id"
 
-  create_table "dislikepreferences", force: true do |t|
+  create_table "dislikepreferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20151031134556) do
 
   add_index "dislikepreferences", ["user_id"], name: "index_dislikepreferences_on_user_id"
 
-  create_table "leisurepreferences", force: true do |t|
+  create_table "leisurepreferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -51,16 +51,7 @@ ActiveRecord::Schema.define(version: 20151031134556) do
 
   add_index "leisurepreferences", ["user_id"], name: "index_leisurepreferences_on_user_id"
 
-  create_table "notwearpreferences", force: true do |t|
-    t.string   "image_name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "notwearpreferences", ["user_id"], name: "index_notwearpreferences_on_user_id"
-
-  create_table "patternsdislikepreferences", force: true do |t|
+  create_table "patternsdislikepreferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -69,7 +60,7 @@ ActiveRecord::Schema.define(version: 20151031134556) do
 
   add_index "patternsdislikepreferences", ["user_id"], name: "index_patternsdislikepreferences_on_user_id"
 
-  create_table "size_profiles", force: true do |t|
+  create_table "size_profiles", force: :cascade do |t|
     t.string   "tshirt_size"
     t.string   "tshirt_brand"
     t.string   "shirt_size"
@@ -88,16 +79,7 @@ ActiveRecord::Schema.define(version: 20151031134556) do
 
   add_index "size_profiles", ["user_id"], name: "index_size_profiles_on_user_id"
 
-  create_table "unlikepatternspreferences", force: true do |t|
-    t.string   "image_name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "unlikepatternspreferences", ["user_id"], name: "index_unlikepatternspreferences_on_user_id"
-
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "provider",                            null: false
     t.string   "uid",                    default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -127,7 +109,7 @@ ActiveRecord::Schema.define(version: 20151031134556) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
 
-  create_table "workpreferences", force: true do |t|
+  create_table "workpreferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"

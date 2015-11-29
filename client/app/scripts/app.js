@@ -73,7 +73,6 @@ angular
             return $auth.validateUser();
           }
         },
-        abstract:true
       })
       .state('home.sizeprofile', {
         url: '/sizeprofile',

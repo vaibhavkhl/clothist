@@ -24,7 +24,10 @@ angular.module('clientApp')
           $state.go('home')
         })
         .catch(function(resp) {
-          $scope.errors = resp.data.errors.full_messages[0];
+          if (resp.data.errors) {
+            $scope.errors = resp.data.errors.full_messages[0];
+          }
+          $scope.errors = 'Some error occured, please try again.'
         });
     };
 
