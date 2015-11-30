@@ -1,6 +1,6 @@
-class CreateCostpreferences < ActiveRecord::Migration
+class CreateCostPreferences < ActiveRecord::Migration
   def change
-    create_table :costpreferences do |t|
+    create_table :cost_preferences do |t|
       t.string :image_name
       t.references :user, index: true
 

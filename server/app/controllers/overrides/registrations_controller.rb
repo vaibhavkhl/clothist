@@ -6,13 +6,13 @@ module Overrides
     # end
 
     def sign_up_params
-       params.require(:user).permit(:first_name,
-        :last_name, :email, :password, :password_confirmation,
-        workpreference_attributes: [:image_name],
-        leisurepreference_attributes: [:image_name],
-        dislikepreference_attributes: [:image_name],
-        patternsdislikepreference_attributes: [:image_name],
-        costpreference_attributes: [:image_name])
+       params.require(:user).permit(:name, :email,
+        :password, :password_confirmation,
+        work_preference_attributes: [:image_name],
+        leisure_preference_attributes: [:image_name],
+        dislike_preference_attributes: [:image_name],
+        patterns_dislike_preference_attributes: [:image_name],
+        cost_preference_attributes: [:image_name])
     end
 
   end

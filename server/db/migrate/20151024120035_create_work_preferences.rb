@@ -1,6 +1,6 @@
-class CreateDislikepreferences < ActiveRecord::Migration
+class CreateWorkPreferences < ActiveRecord::Migration
   def change
-    create_table :dislikepreferences do |t|
+    create_table :work_preferences do |t|
       t.string :image_name
       t.references :user, index: true
 

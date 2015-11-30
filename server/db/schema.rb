@@ -24,41 +24,41 @@ ActiveRecord::Schema.define(version: 20151102171036) do
 
   add_index "boxes", ["user_id"], name: "index_boxes_on_user_id"
 
-  create_table "costpreferences", force: :cascade do |t|
+  create_table "cost_preferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "costpreferences", ["user_id"], name: "index_costpreferences_on_user_id"
+  add_index "cost_preferences", ["user_id"], name: "index_cost_preferences_on_user_id"
 
-  create_table "dislikepreferences", force: :cascade do |t|
+  create_table "dislike_preferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "dislikepreferences", ["user_id"], name: "index_dislikepreferences_on_user_id"
+  add_index "dislike_preferences", ["user_id"], name: "index_dislike_preferences_on_user_id"
 
-  create_table "leisurepreferences", force: :cascade do |t|
+  create_table "leisure_preferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "leisurepreferences", ["user_id"], name: "index_leisurepreferences_on_user_id"
+  add_index "leisure_preferences", ["user_id"], name: "index_leisure_preferences_on_user_id"
 
-  create_table "patternsdislikepreferences", force: :cascade do |t|
+  create_table "patterns_dislike_preferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "patternsdislikepreferences", ["user_id"], name: "index_patternsdislikepreferences_on_user_id"
+  add_index "patterns_dislike_preferences", ["user_id"], name: "index_patterns_dislike_preferences_on_user_id"
 
   create_table "size_profiles", force: :cascade do |t|
     t.string   "tshirt_size"
@@ -95,8 +95,7 @@ ActiveRecord::Schema.define(version: 20151102171036) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "email"
     t.string   "phnno"
     t.string   "dob"
@@ -109,13 +108,13 @@ ActiveRecord::Schema.define(version: 20151102171036) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
 
-  create_table "workpreferences", force: :cascade do |t|
+  create_table "work_preferences", force: :cascade do |t|
     t.string   "image_name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "workpreferences", ["user_id"], name: "index_workpreferences_on_user_id"
+  add_index "work_preferences", ["user_id"], name: "index_work_preferences_on_user_id"
 
 end

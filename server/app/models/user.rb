@@ -6,22 +6,22 @@ class User < ActiveRecord::Base
 
   before_save -> { skip_confirmation! }
 
-  has_many :workpreference
-  accepts_nested_attributes_for :workpreference
+  has_many :work_preferences
+  accepts_nested_attributes_for :work_preferences
 
-  has_many :leisurepreference
-  accepts_nested_attributes_for :leisurepreference
+  has_many :leisure_preferences
+  accepts_nested_attributes_for :leisure_preferences
 
-  has_many :dislikepreference
-  accepts_nested_attributes_for :dislikepreference
+  has_many :dislike_preferences
+  accepts_nested_attributes_for :dislike_preferences
 
-  has_many :patternsdislikepreference
-  accepts_nested_attributes_for :patternsdislikepreference
+  has_many :patterns_dislike_preferences
+  accepts_nested_attributes_for :patterns_dislike_preferences
 
-  has_one :costpreference
-  accepts_nested_attributes_for :costpreference
+  has_one :cost_preferences
+  accepts_nested_attributes_for :cost_preferences
 
-  has_many :box
+  has_many :boxes
 
   has_one :size_profile
 end
