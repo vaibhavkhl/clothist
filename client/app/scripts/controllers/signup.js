@@ -32,14 +32,16 @@ angular.module('clientApp')
     };
 
     var getUserParams = function() {
-      $scope.user.work_preference_attributes = getParams($scope.workpreference);
-      $scope.user.leisure_preference_attributes =
+      $scope.user.work_preferences_attributes =
+        getParams($scope.workpreference);
+      $scope.user.leisure_preferences_attributes =
         getParams($scope.leisurepreference);
-      $scope.user.dislike_preference_attributes =
+      $scope.user.dislike_preferences_attributes =
         getParams($scope.dislikepreference);
-      $scope.user.patterns_dislike_preference_attributes =
+      $scope.user.patterns_dislike_preferences_attributes =
         getParams($scope.patternsdislikepreference);
-      $scope.user.cost_preference_attributes = getParams($scope.costpreference);
+      $scope.user.cost_preferences_attributes =
+        getParams($scope.costpreference);
 
       var params = {user: $scope.user};
       console.log(params)
