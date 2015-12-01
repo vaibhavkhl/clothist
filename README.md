@@ -75,3 +75,8 @@ git subtree push --prefix server heroku master
 4. Write a Test
 5. Add a configuration file e.g protractor.conf.js
 6. Run the test: protractor protractor.conf.js
+
+#E2E Testing with Grunt
+1. npm run selenium_setup
+2. npm run start_selenium_server
+3. grunt
