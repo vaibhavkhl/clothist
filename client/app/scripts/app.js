@@ -83,6 +83,11 @@ angular
         url: '/box',
         templateUrl: 'views/schedule_box.html',
         controller: 'ScheduleBoxCtrl'
+      })
+      .state('admin', {
+        url: '/admin',
+        templateUrl: 'views/admin.html',
+        controller: 'AdminCtrl'
       });
 
     $urlRouterProvider.otherwise('/landing');
