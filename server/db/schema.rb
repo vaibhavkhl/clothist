@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102171036) do
+ActiveRecord::Schema.define(version: 20151130195710) do
+
+  create_table "box_products", force: :cascade do |t|
+    t.integer  "box_id"
+    t.integer  "product_id"
+    t.boolean  "accepted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "box_products", ["box_id"], name: "index_box_products_on_box_id"
+  add_index "box_products", ["product_id"], name: "index_box_products_on_product_id"
 
   create_table "boxes", force: :cascade do |t|
-    t.datetime "delivery_date"
+    t.datetime "delivery_date_requested"
+    t.datetime "delivery_date_actual"
     t.string   "return_day"
     t.text     "special_instructions"
+    t.decimal  "total_cost",              precision: 9, scale: 2
+    t.decimal  "products_bought_cost",    precision: 9, scale: 2
+    t.string   "payment_method"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,6 +75,27 @@ ActiveRecord::Schema.define(version: 20151102171036) do
 
   add_index "patterns_dislike_preferences", ["user_id"], name: "index_patterns_dislike_preferences_on_user_id"
 
+  create_table "products", force: :cascade do |t|
+    t.string   "custom_id"
+    t.integer  "order_id"
+    t.integer  "unique_id"
+    t.string   "apparel_category"
+    t.string   "size"
+    t.string   "source"
+    t.string   "seller"
+    t.string   "brand"
+    t.text     "description"
+    t.decimal  "original_price",   precision: 8, scale: 2
+    t.decimal  "cost",             precision: 8, scale: 2
+    t.decimal  "discount",         precision: 8, scale: 2
+    t.string   "price_range"
+    t.date     "order_date"
+    t.date     "receive_date"
+    t.integer  "quantity"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
+
   create_table "size_profiles", force: :cascade do |t|
     t.string   "tshirt_size"
     t.string   "tshirt_brand"
@@ -99,6 +135,7 @@ ActiveRecord::Schema.define(version: 20151102171036) do
     t.string   "email"
     t.string   "phnno"
     t.string   "dob"
+    t.string   "role"
     t.text     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"

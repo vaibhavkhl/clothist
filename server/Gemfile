@@ -8,6 +8,7 @@ group :development do
   gem 'spring'
   gem 'sqlite3'
   gem 'compass'
+  gem 'pry'
 end
 
 group :production do

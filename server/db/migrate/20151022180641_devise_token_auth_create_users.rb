@@ -40,6 +40,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :phnno
       t.string :dob
+      t.string :role
 
       ## Tokens
       t.text :tokens
