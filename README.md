@@ -67,3 +67,11 @@ grunt build
 copy content of dist folder and paste it server/public
 git subtree push --prefix server heroku master
 ```
+# E2E Testing with Protractor
+
+1. Install protractor: npm install -g protractor
+2. Get an instance of selenium server: webdriver-manager update
+3. Start up a server: webdriver-manager start
+4. Write a Test
+5. Add a configuration file e.g protractor.conf.js
+6. Run the test: protractor protractor.conf.js
