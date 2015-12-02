@@ -147,6 +147,13 @@
   cursor: pointer;
 }
 
+.feedback_text{
+  //border-bottom: 1px solid #ccc;
+}
+
+.return_details{
+  //border-top: 1px solid #666;
+}
 /*For mobile layout*/
 @media (max-width: 768px) {
   .images-container .col-xs-12{
@@ -156,6 +163,15 @@
   .image{
     width: 70%;
     margin: auto;
+  }
+
+  .product img{
+    width: 100%;
+  }
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1.2;
   }
 
 }

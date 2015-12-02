@@ -88,6 +88,11 @@ angular
         url: '/admin',
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl'
+      })
+      .state('feedback', {
+        url: '/feedback',
+        templateUrl: 'views/feedback.html',
+        controller: 'FeedbackCtrl'
       });
 
     $urlRouterProvider.otherwise('/landing');
