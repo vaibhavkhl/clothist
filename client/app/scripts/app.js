@@ -95,7 +95,7 @@ angular
         templateUrl: 'views/checkout_welcome.html'
       })
       .state('checkout.products', {
-        url:'',
+        url: '',
         templateUrl: 'views/checkout_products.html',
         controller:'CheckoutProductsCtrl'
       });
