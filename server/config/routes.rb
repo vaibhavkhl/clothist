@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :user, except: [:new, :edit]
     resources :box, except: [:new, :edit]
     resources :size_profiles, except: [:new, :edit]
-    post 'create_box_by_admin', to: 'box#create_box_by_admin'
+    post 'box/create_box_by_admin', to: 'box#create_box_by_admin'
+    get 'box/get_box_by_unique_identifier', to: 'box#get_box_by_unique_identifier'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

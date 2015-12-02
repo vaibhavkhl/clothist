@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20151130195710) do
     t.decimal  "total_cost",              precision: 9, scale: 2
     t.decimal  "products_bought_cost",    precision: 9, scale: 2
     t.string   "payment_method"
+    t.string   "unique_identifier"
+    t.text     "overall_feedback"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

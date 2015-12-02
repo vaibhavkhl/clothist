@@ -8,6 +8,8 @@ class CreateBoxes < ActiveRecord::Migration
       t.decimal :total_cost, precision: 9, scale: 2
       t.decimal :products_bought_cost, precision: 9, scale: 2
       t.string :payment_method
+      t.string :unique_identifier
+      t.text :overall_feedback
       t.references :user, index: true
 
       t.timestamps

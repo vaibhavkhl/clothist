@@ -1,17 +1,15 @@
 class BoxController < ApplicationController
-  require 'pry'
 
   def index
    @boxes = Box.all
    render json: @boxes, each_serializer: BoxSerializer
- end
+  end
 
   def show
     @box = Box.find(params[:id])
-
     render json: @box
   end
-  
+
   def create
     @box = Box.new(box_params)
     if @box.save
@@ -19,6 +17,11 @@ class BoxController < ApplicationController
     else
       render json: @box.errors.full_messages
     end
+  end
+
+  def get_box_by_unique_identifier
+    @box = Box.find_by_unique_identifier(params[:unique_identifier])
+    render json: @box
   end
 
   def create_box_by_admin
