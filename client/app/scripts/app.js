@@ -92,14 +92,18 @@ angular
       })
       .state('checkout', {
         url: '/checkout/:unique_identifier',
+        templateUrl: 'views/checkout.html',
+        controller:'CheckoutCtrl',
+        abstract:true
+      })
+      .state('checkout.welcome', {
+        url: '',
         templateUrl: 'views/checkout_welcome.html'
       })
       .state('checkout.products', {
         url: '',
-        templateUrl: 'views/checkout_products.html',
-        controller:'CheckoutProductsCtrl'
+        templateUrl: 'views/checkout_products.html'
       });
-;
 
     $urlRouterProvider.otherwise('/landing');
 
