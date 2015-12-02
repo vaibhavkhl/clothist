@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20151130195710) do
   create_table "boxes", force: :cascade do |t|
     t.datetime "delivery_date_requested"
     t.datetime "delivery_date_actual"
-    t.string   "return_day"
+    t.datetime "return_datetime"
     t.text     "special_instructions"
     t.decimal  "total_cost",              precision: 9, scale: 2
     t.decimal  "products_bought_cost",    precision: 9, scale: 2
@@ -87,15 +87,17 @@ ActiveRecord::Schema.define(version: 20151130195710) do
     t.string   "seller"
     t.string   "brand"
     t.text     "description"
-    t.decimal  "original_price",   precision: 8, scale: 2
-    t.decimal  "cost",             precision: 8, scale: 2
-    t.decimal  "discount",         precision: 8, scale: 2
+    t.decimal  "original_price",    precision: 8, scale: 2
+    t.decimal  "cost",              precision: 8, scale: 2
+    t.decimal  "sell_price",        precision: 8, scale: 2
+    t.decimal  "discount",          precision: 8, scale: 2
     t.string   "price_range"
     t.date     "order_date"
     t.date     "receive_date"
     t.integer  "quantity"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.boolean  "feedback_required"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "size_profiles", force: :cascade do |t|

@@ -25,8 +25,6 @@ class BoxController < ApplicationController
   end
 
   def create_box_by_admin
-    # @user = User.new(user_params)
-    # @user.save
     @box = Box.new(box_product_params)
     @box.save
     render json: @box
@@ -34,8 +32,8 @@ class BoxController < ApplicationController
 
   private
     def box_params
-      params.require(:box).permit(:user_id, :delivery_date,
-        :return_day, :special_instructions)
+      params.require(:box).permit(:user_id, :delivery_date_requested,
+        :return_datetime, :special_instructions)
     end
 
     def user_params
@@ -43,7 +41,7 @@ class BoxController < ApplicationController
     end
 
     def box_product_params
-      params.require(:box).permit(:delivery_date_actual,
+      params.require(:box).permit(:delivery_date_requested, :return_datetime,
         box_products_attributes: [:product_id])
     end
 

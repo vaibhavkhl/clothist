@@ -12,11 +12,13 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.decimal :original_price, precision: 8, scale: 2
       t.decimal :cost, precision: 8, scale: 2
+      t.decimal :sell_price, precision: 8, scale: 2
       t.decimal :discount, precision: 8, scale: 2
       t.string :price_range
       t.date :order_date
       t.date :receive_date
       t.integer :quantity
+      t.boolean :feedback_required
 
       t.timestamps null: false
     end

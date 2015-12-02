@@ -5,22 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Product.create(description: 'blue tshirt', original_price: '1000', apparel_category: 'tee')
-Product.create(description: 'red denim', original_price: '2000')
-Product.create(description: 'blue shirt', original_price: '3000')
-Product.create(description: 'black trouser', original_price: '4000')
-Product.create(description: 'white jacket', original_price: '5000')
-Product.create(description: 'black tshirt', original_price: '6000')
-Product.create(description: 'blue tshirt', original_price: '7000')
-Product.create(description: 'blue tshirt', original_price: '8000')
-Product.create(description: 'blue tshirt', original_price: '9000')
-Product.create(description: 'blue tshirt', original_price: '10000')
-Product.create(description: 'blue tshirt', original_price: '1000')
+Product.create(description: 'blue tshirt', original_price: '1000',
+  sell_price: '700', brand: 'US Polo', feedback_required: true)
+Product.create(description: 'black jeans', original_price: '1800',
+  sell_price: '1800', brand: 'levis', feedback_required: true)
+Product.create(description: 'white shirt', original_price: '1500',
+  sell_price: '1200', brand: 'blackberry', feedback_required: true)
+Product.create(description: 'brown chino', original_price: '1500',
+  sell_price: '1500', brand: 'gap', feedback_required: true)
+Product.create(description: 'black belt', original_price: '1000',
+  sell_price: '700', brand: 'Armani', feedback_required: false)
+Product.create(description: 'striped tie', original_price: '1000',
+  sell_price: '700', brand: 'Gucci', feedback_required: false)
 
-Box.create(delivery_date_requested: "2015-11-30T18:30:00.000Z", return_day: "1",
+
+Box.create(delivery_date_requested: "2015-11-30T18:30:00.000Z", return_datetime: "2015-12-3T18:30:00.000Z",
   user_id: "1", box_products_attributes: [{product_id: "1"},
-    {product_id: "2"},{product_id: "3"}])
-
-Box.create(delivery_date_requested: "2015-11-30T18:30:00.000Z", return_day: "1",
-  user_id: "1", box_products_attributes: [{product_id: "4"},
-    {product_id: "5"},{product_id: "6"}])
+    {product_id: "2"},{product_id: "3"},{product_id: "4"},{product_id: "5"},{product_id: "6"}])
