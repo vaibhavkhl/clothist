@@ -90,11 +90,16 @@ angular
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl'
       })
-      .state('feedback', {
-        url: '/feedback/:unique_identifier',
-        templateUrl: 'views/feedback.html',
-        controller: 'FeedbackCtrl'
+      .state('checkout', {
+        url: '/checkout/:unique_identifier',
+        templateUrl: 'views/checkout_welcome.html'
+      })
+      .state('checkout.products', {
+        url:'',
+        templateUrl: 'views/checkout_products.html',
+        controller:'CheckoutProductsCtrl'
       });
+;
 
     $urlRouterProvider.otherwise('/landing');
 

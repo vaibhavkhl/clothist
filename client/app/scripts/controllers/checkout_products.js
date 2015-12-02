@@ -8,7 +8,8 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('FeedbackCtrl', function ($scope, $stateParams, box) {
+  .controller('CheckoutProductsCtrl', function ($scope, $stateParams, box) {
+      console.log("boc ")
       box.getBoxByIdentifier($stateParams.unique_identifier)
         .then(function(resp) {
           $scope.box = resp.data.box;
