@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="feedback_text">
-		<h4>Its time to checkout!</h4>
+		<h3 class="grey-text">Its time to checkout!</h3>
 		<p>Let us know what you're keeping, and what you are not. <br>Your feedback is important to make your future collections even better</p>
 	</div>
 	<div class="feedback_form">
@@ -9,5 +9,5 @@
 			<checkout-return-details ng-show="!obj.accepted"></checkout-return-details>
 		</div>
 	</div>
-	<button type="button" class="btn btn-success btn-responsive pull-right">Review your order</button>
+	<a ui-sref="checkout.revieworder"><button type="button" class="btn btn-success btn-responsive pull-right">Review your order</button></a>
 </div>

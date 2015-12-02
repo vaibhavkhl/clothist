@@ -103,6 +103,10 @@ angular
       .state('checkout.products', {
         url: '',
         templateUrl: 'views/checkout_products.html'
+      })
+      .state('checkout.revieworder', {
+        url: '',
+        templateUrl: 'views/checkout_review_order.html'
       });
 
     $urlRouterProvider.otherwise('/landing');
