@@ -14,7 +14,8 @@ angular
     'ui.router',
     'ng-token-auth',
     'formly',
-    'formlyBootstrap'
+    'formlyBootstrap',
+    'ui.bootstrap'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $authProvider) {
     $stateProvider

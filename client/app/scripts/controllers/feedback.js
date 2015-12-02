@@ -22,7 +22,7 @@ angular.module('clientApp')
   				"name":"Product2",
   				"desc":"Details of Product2",
   				"cost":"Rs. 1200",
-  				"selection":"return"
+  				"selection":"keep"
   			}
   		]
   		      $scope.color = {
