@@ -14,4 +14,8 @@ angular.module('clientApp')
     this.create = function(params) {
       return $http.post($auth.apiUrl() + '/box', {box: params});
     };
+
+    this.getBoxByIdentifier = function(identifier) {
+      return $http.get($auth.apiUrl() + '/get_box_by_unique_identifier?unique_identifier=' + identifier);
+    }
   });

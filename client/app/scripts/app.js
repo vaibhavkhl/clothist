@@ -91,7 +91,7 @@ angular
         controller: 'AdminCtrl'
       })
       .state('feedback', {
-        url: '/feedback',
+        url: '/feedback/:unique_identifier',
         templateUrl: 'views/feedback.html',
         controller: 'FeedbackCtrl'
       });
