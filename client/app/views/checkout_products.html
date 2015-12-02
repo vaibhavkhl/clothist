@@ -1,62 +1,13 @@
 <div class="container">
 	<div class="feedback_text">
-		<h4>Its time for checkout!</h4>
-		<p>Select which produts you want to keep. Please help us by providing the feedback.</p>
+		<h4>Its time to checkout!</h4>
+		<p>Let us know what you're keeping, and what you are not. <br>Your feedback is important to make your future collections even better</p>
 	</div>
 	<div class="feedback_form">
-		<h4>Products</h4>
-		<ol class="list-group">
-			<li class="list-group-item" ng-repeat="product in products">
-				<div class="product">
-					<div class="row">
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<img src="images/leisure_casual.jpg" width="100"/>
-						</div>
-						<div class="col-md-8 col-sm-8 col-xs-8" ng-show="!returnItem1">
-							<h6>{{product.name}}</h6>
-							<p>{{product.desc}}</p>
-							<div class="price">{{product.cost}}</div>
-  							<div class="btn-group">
-						        <label class="btn btn-default btn-responsive" ng-model="product.selection" uib-btn-radio="'keep'">Keep</label>
-						        <label class="btn btn-default btn-responsive" ng-model="product.selection" uib-btn-radio="'return'">Return</label>
-						    </div>
-						</div>
-					</div>
-					<div id="product_{{product.id}}" class="return_details slideInDown" ng-show="product.selection=='return'">
-						<h5>Details</h5>
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-6">
-								<h6>Size</h6>
-								<div class="btn-group">
-									<button type="button" class="btn btn-default btn-responsive">Loose</button>
-									<button type="button" class="btn btn-default btn-responsive">Tight</button>
-								</div>
-								<h6>Price</h6>
-								<div class="btn-group">
-									<button type="button" class="btn btn-default btn-responsive">Low</button>
-									<button type="button" class="btn btn-default btn-responsive">High</button>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6">
-								<h6>Color</h6>
-								<div class="btn-group">
-									<button type="button" class="btn btn-default btn-responsive">Too Bright</button>
-									<button type="button" class="btn btn-default btn-responsive">Too Dull</button>
-								</div>
-								<h6>Like it but</h6>
-								<div class="btn-group">
-									<button type="button" class="btn btn-default btn-responsive">Option1</button>
-									<button type="button" class="btn btn-default btn-responsive">Option2</button>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4 col-xs-12">
-								<h6>Comments</h6>
-								<textarea class="form-control" rows="3" cols="10"></textarea>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-		</ol>		
+		<div class="checkout_product" ng-repeat="obj in box.box.box_products">
+			<checkout-products-list item="obj"></checkout-products-list>
+			<checkout-return-details ng-show="!obj.accepted"></checkout-return-details>
+		</div>
 	</div>
+	<button type="button" class="btn btn-success btn-responsive pull-right">Review your order</button>
 </div>

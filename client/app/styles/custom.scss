@@ -177,13 +177,13 @@
   z-index: 100;
   cursor: pointer;
 }
-
 .feedback_text{
-  //border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
-
-.return_details{
-  //border-top: 1px solid #666;
+.checkout_product{
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom:10px;
 }
 /*For mobile layout*/
 @media (max-width: 768px) {
@@ -196,9 +196,6 @@
     margin: auto;
   }
 
-  .product img{
-    width: 100%;
-  }
   .btn-responsive {
     padding:2px 4px;
     font-size:80%;

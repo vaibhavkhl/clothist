@@ -12,27 +12,91 @@ angular.module('clientApp')
       box.getBoxByIdentifier($stateParams.unique_identifier)
         .then(function(resp) {
           $scope.box = resp.data.box;
-          console.log($scope.box)
-        })
-
-  		$scope.products = [
-  			{
-  				"id":1,
-  				"name":"Product1",
-  				"desc":"Details of Product1",
-  				"cost":"Rs. 1000",
-  				"selection":"keep"
-  			},
-  			{
-  				"id":2,
-  				"name":"Product2",
-  				"desc":"Details of Product2",
-  				"cost":"Rs. 1200",
-  				"selection":"keep"
-  			}
-  		]
-  		      $scope.color = {
-        name: 'blue'
-      };
-
+      });
+      // $scope.box = {
+      //                   "box": {
+      //                     "id": 1,
+      //                     "unique_identifier": "a58711ce2f95",
+      //                     "box_products": [
+      //                     {
+      //                       "id": 1,
+      //                       "product_id": 1,
+      //                       "accepted": true,
+      //                       "product": {
+      //                       "id": 1,
+      //                       "description": "blue tshirt",
+      //                       "original_price": "1000.0",
+      //                       "brand": "US Polo",
+      //                       "sell_price": "700.0",
+      //                       "feedback_required": true
+      //                     }
+      //                   },
+      //                   {
+      //                     "id": 2,
+      //                     "product_id": 2,
+      //                     "accepted": true,
+      //                     "product": {
+      //                     "id": 2,
+      //                     "description": "black jeans",
+      //                     "original_price": "1800.0",
+      //                     "brand": "levis",
+      //                     "sell_price": "1800.0",
+      //                     "feedback_required": true
+      //                     }
+      //                   },
+      //                   {
+      //                     "id": 3,
+      //                     "product_id": 3,
+      //                     "accepted": true,
+      //                     "product": {
+      //                     "id": 3,
+      //                     "description": "white shirt",
+      //                     "original_price": "1500.0",
+      //                     "brand": "blackberry",
+      //                     "sell_price": "1200.0",
+      //                     "feedback_required": true
+      //                     }
+      //                   },
+      //                   {
+      //                     "id": 4,
+      //                     "product_id": 4,
+      //                     "accepted": true,
+      //                     "product": {
+      //                     "id": 4,
+      //                     "description": "brown chino",
+      //                     "original_price": "1500.0",
+      //                     "brand": "gap",
+      //                     "sell_price": "1500.0",
+      //                     "feedback_required": true
+      //                     }
+      //                   },
+      //                   {
+      //                     "id": 5,
+      //                     "product_id": 5,
+      //                     "accepted": true,
+      //                     "product": {
+      //                     "id": 5,
+      //                     "description": "black belt",
+      //                     "original_price": "1000.0",
+      //                     "brand": "Armani",
+      //                     "sell_price": "700.0",
+      //                     "feedback_required": false
+      //                     }
+      //                   },
+      //                   {
+      //                     "id": 6,
+      //                     "product_id": 6,
+      //                     "accepted": true,
+      //                     "product": {
+      //                     "id": 6,
+      //                     "description": "striped tie",
+      //                     "original_price": "1000.0",
+      //                     "brand": "Gucci",
+      //                     "sell_price": "700.0",
+      //                     "feedback_required": false
+      //                     }
+      //                   }
+      //                 ]
+      //               }
+      //           };
   });
