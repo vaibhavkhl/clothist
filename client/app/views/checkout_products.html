@@ -4,9 +4,9 @@
 		<p>Let us know what you're keeping, and what you are not. <br>Your feedback is important to make your future collections even better</p>
 	</div>
 	<div class="feedback_form">
-		<div class="checkout_product" ng-repeat="obj in box.box.box_products">
+		<div class="checkout_product" ng-repeat="obj in box.box.box_products_attributes">
 			<checkout-products-list item="obj"></checkout-products-list>
-			<checkout-return-details ng-show="!obj.accepted"></checkout-return-details>
+			<checkout-return-details item="obj.returned_product_reason_attributes" ng-show="!obj.accepted"></checkout-return-details>
 		</div>
 	</div>
 	<a ui-sref="checkout.revieworder"><button type="button" class="btn btn-success btn-responsive pull-right">Review your order</button></a>

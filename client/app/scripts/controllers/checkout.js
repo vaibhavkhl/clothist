@@ -15,13 +15,15 @@ angular.module('clientApp')
       });
       // $scope.box = {
       //                   "box": {
+      //                     "payment_method":'cash',
       //                     "id": 1,
       //                     "unique_identifier": "a58711ce2f95",
-      //                     "box_products": [
+      //                     "box_products_attributes": [
       //                     {
       //                       "id": 1,
       //                       "product_id": 1,
       //                       "accepted": true,
+      //                       "returned_product_reason_attributes": {"size": "tight","price":"low","color":"bright","style":"opt1"},
       //                       "product": {
       //                       "id": 1,
       //                       "description": "blue tshirt",
@@ -35,6 +37,7 @@ angular.module('clientApp')
       //                     "id": 2,
       //                     "product_id": 2,
       //                     "accepted": true,
+      //                     "returned_product_reason_attributes": {"size": "tight","price":"low","color":"bright","style":"opt1"},
       //                     "product": {
       //                     "id": 2,
       //                     "description": "black jeans",
@@ -48,6 +51,7 @@ angular.module('clientApp')
       //                     "id": 3,
       //                     "product_id": 3,
       //                     "accepted": true,
+      //                     "returned_product_reason_attributes": {"size": "tight","price":"low","color":"bright","style":"opt1"},
       //                     "product": {
       //                     "id": 3,
       //                     "description": "white shirt",
@@ -55,45 +59,6 @@ angular.module('clientApp')
       //                     "brand": "blackberry",
       //                     "sell_price": "1200.0",
       //                     "feedback_required": true
-      //                     }
-      //                   },
-      //                   {
-      //                     "id": 4,
-      //                     "product_id": 4,
-      //                     "accepted": true,
-      //                     "product": {
-      //                     "id": 4,
-      //                     "description": "brown chino",
-      //                     "original_price": "1500.0",
-      //                     "brand": "gap",
-      //                     "sell_price": "1500.0",
-      //                     "feedback_required": true
-      //                     }
-      //                   },
-      //                   {
-      //                     "id": 5,
-      //                     "product_id": 5,
-      //                     "accepted": true,
-      //                     "product": {
-      //                     "id": 5,
-      //                     "description": "black belt",
-      //                     "original_price": "1000.0",
-      //                     "brand": "Armani",
-      //                     "sell_price": "700.0",
-      //                     "feedback_required": false
-      //                     }
-      //                   },
-      //                   {
-      //                     "id": 6,
-      //                     "product_id": 6,
-      //                     "accepted": true,
-      //                     "product": {
-      //                     "id": 6,
-      //                     "description": "striped tie",
-      //                     "original_price": "1000.0",
-      //                     "brand": "Gucci",
-      //                     "sell_price": "700.0",
-      //                     "feedback_required": false
       //                     }
       //                   }
       //                 ]

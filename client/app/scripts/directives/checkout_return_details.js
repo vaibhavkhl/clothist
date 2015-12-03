@@ -7,7 +7,7 @@ angular.module('clientApp')
   		},
   		templateUrl:'views/checkout_return_details.html',
   		link:function(scope){
-
+        console.log(scope.item)
   		}
   	}
   });

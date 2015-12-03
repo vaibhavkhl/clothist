@@ -4,11 +4,11 @@
 	</div>
 	<div class="order_container">
 		<h4 class="grey-text">KEEPING</h4>
-		<div class="review_product" ng-repeat="item in box.box.box_products" ng-if="item.accepted">
+		<div class="review_product" ng-repeat="item in box.box.box_products_attributes" ng-if="item.accepted">
 			<checkout-review-list product="item"></checkout-review-list>
 		</div>
 		<h4 class="grey-text">RETURNING</h4>
-		<div class="review_product" ng-repeat="item in box.box.box_products" ng-if="!item.accepted">
+		<div class="review_product" ng-repeat="item in box.box.box_products_attributes" ng-if="!item.accepted">
 			<checkout-review-list product="item"></checkout-review-list>
 		</div>
 		<hr>
