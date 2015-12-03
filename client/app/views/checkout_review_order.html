@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="feedback_text">
+		<h3 class="grey-text">Order Summary</h3>
+	</div>
+	<div class="order_container">
+		<h4 class="grey-text">KEEPING</h4>
+		<div class="review_product" ng-repeat="item in box.box.box_products" ng-if="item.accepted">
+			<checkout-review-list product="item"></checkout-review-list>
+		</div>
+		<h4 class="grey-text">RETURNING</h4>
+		<div class="review_product" ng-repeat="item in box.box.box_products" ng-if="!item.accepted">
+			<checkout-review-list product="item"></checkout-review-list>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6"></div>
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<h4>Total: price</h4>
+		</div>
+	</div>
+</div>
