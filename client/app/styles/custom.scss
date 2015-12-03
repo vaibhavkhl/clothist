@@ -5,12 +5,16 @@ body{
 .grey-text{
   color: #666!important;
 }
-.btn-grey{
+.btn-grey, .btn-grey:hover{
   background-color: #ccc;
-  color: #000;
+  color: #fff;
   font-weight: semi-bold;
 }
 
+.btn-dark-grey, .btn-dark-grey:hover{
+  background-color: #4d4d4d;
+  color: #fff;
+}
 
 .header {
   border-bottom: 0;
@@ -186,6 +190,8 @@ body{
   z-index: 100;
   cursor: pointer;
 }
+
+/*--------------------Checkout CSS------------*/
 .feedback_text{
   border-bottom: 1px solid #ccc;
 }
@@ -200,6 +206,15 @@ body{
 .strike_through_price{
   text-decoration: line-through;
 }
+.checkout_product_brand{
+  font-weight: lighter;
+  margin: 0;
+}
+.checkout_product_desc{
+  margin-top: 0;
+}
+
+/*-------------End---------------*/
 /*For mobile layout*/
 @media (max-width: 768px) {
   .images-container .col-xs-12{
@@ -213,7 +228,7 @@ body{
 
   .btn-responsive {
     padding:2px 4px;
-    font-size:65%;
+    font-size:70%;
     line-height: 1.2;
   }
 

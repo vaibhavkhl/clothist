@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col-md-6 col-sm-6 col-xs-6">
-		<p>{{item.product.brand}}</p>
-		<h4>{{item.product.description}}</h4>
-		<div class="price">{{item.product.sell_price}}</div>
+		<p class="checkout_product_brand">{{item.product.brand}}</p>
+		<h4 class="checkout_product_desc">{{item.product.description}}</h4>
+		<div><i class="fa fa-inr"></i> {{item.product.sell_price}}</div>
 	</div>
 	<div class="col-md-6 col-sm-6 col-xs-6">
 		<div class="btn-group">
-	        <label class="btn btn-default btn-responsive" ng-model="item.accepted" uib-btn-radio="true">Keep it!</label>
-	        <label class="btn btn-default btn-responsive" ng-model="item.accepted" uib-btn-radio="false">Return it!</label>
+	        <label class="btn btn-grey btn-responsive" ng-class="{'btn-dark-grey':item.accepted}" ng-model="item.accepted" uib-btn-radio="true">Keep it!</label>
+	        <label class="btn btn-grey btn-responsive" ng-class="{'btn-dark-grey':!item.accepted}" ng-model="item.accepted" uib-btn-radio="false">Return it!</label>
 	    </div>
 	</div>
 </div>
