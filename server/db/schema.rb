@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130195710) do
+ActiveRecord::Schema.define(version: 20151203151504) do
 
   create_table "box_products", force: :cascade do |t|
     t.integer  "box_id"
@@ -99,6 +99,18 @@ ActiveRecord::Schema.define(version: 20151130195710) do
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
   end
+
+  create_table "returned_product_reasons", force: :cascade do |t|
+    t.string   "size"
+    t.string   "color"
+    t.string   "price"
+    t.string   "have_similar"
+    t.integer  "box_product_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "returned_product_reasons", ["box_product_id"], name: "index_returned_product_reasons_on_box_product_id"
 
   create_table "size_profiles", force: :cascade do |t|
     t.string   "tshirt_size"

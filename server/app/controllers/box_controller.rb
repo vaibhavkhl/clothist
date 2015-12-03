@@ -19,6 +19,15 @@ class BoxController < ApplicationController
     end
   end
 
+  def update
+    @box = Box.find(params[:id])
+    if @box.update(box_product_params)
+      render json: @box
+    else
+      render json: @box.errors
+    end
+  end
+
   def get_box_by_unique_identifier
     @box = Box.find_by_unique_identifier(params[:unique_identifier])
     render json: @box
@@ -42,7 +51,10 @@ class BoxController < ApplicationController
 
     def box_product_params
       params.require(:box).permit(:delivery_date_requested, :return_datetime,
-        box_products_attributes: [:product_id])
+        :payment_method, box_products_attributes: [:id, :product_id, :accepted,
+          returned_product_reason_attributes: [:size, :color, :price,
+            :have_similar]
+          ])
     end
 
 end
