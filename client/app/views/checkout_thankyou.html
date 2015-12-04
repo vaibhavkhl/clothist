@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="well marginTop10">
+		<div ng-show="box.box.payment_method=='Cash on pickup'">
+			<h3 class="grey-text">Thank you. Your order has been processed</h3>
+			<p>Kindly pay Rs. {{box.box.totalPrice}} to the pickup executive</p>
+		</div>
+		<div ng-show="box.box.payment_method=='Credit Card/Debit Card/Net Banking'">
+			<h3 class="grey-text">Thank you. Your order has been processed</h3>
+			<p>You will receive your payment link shortly</p>
+		</div>
+	</div>
+	<h3 class="grey-text">Overall Feedback</h3>
+	<div class="checkout-overall-feedback marginLeft10">
+		<h4>What excites you most about CLOTHIST ?</h4>
+		<div class="btn-group">
+	        <label class="btn btn-default btn-responsive" ng-model="box.box.overall_feedback.selling_point" uib-btn-radio="'Home trial'">Home trial</label>
+	        <label class="btn btn-default btn-responsive" ng-model="box.box.overall_feedback.selling_point" uib-btn-radio="'style selection'">Style selection</label>
+	    </div>
+	    <br><br>
+	    <h4>How often would you like to schedule your CLOTHIST box ?</h4>
+		<p>
+			<input type="radio" ng-model="box.box.overall_feedback.schedule" value="Once in a month">
+			Once in a month
+		</p>  
+		<p>
+		    <input type="radio" ng-model="box.box.overall_feedback.schedule" value="Once in 2 months">
+			Once in 2 months
+		</p>
+		<p>
+		    <input type="radio" ng-model="box.box.overall_feedback.schedule" value="Once in 3 months">
+			Once in 3 months
+		</p>
+		<p>
+		    <input type="radio" ng-model="box.box.overall_feedback.schedule" value="On demand through watsapp">
+			On demand through whatsapp
+		</p>
+		<br>
+		<h4>Suggestion for improvement, if any:</h4>
+		<textarea class="form-control checkout-comment-box" rows="3" cols="10" ng-model="box.box.overall_feedback.comments"></textarea>
+	</div>
+	<button type="button" class="btn btn-success pull-left btn-mobile-submit marginTop10">Submit</button>
+</div>

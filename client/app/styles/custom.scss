@@ -24,6 +24,9 @@ body{
   margin-left: 10px;
 }
 
+.noHover:hover{
+  text-decoration: none;
+}
 .header {
   border-bottom: 0;
   background-color: #333;
@@ -225,6 +228,11 @@ body{
 .checkout-comment-box{
   width: 50%;
 }
+
+.checkout-original-price{
+  font-size: 14px;
+  color: #999;
+}
 /*-------------End---------------*/
 /*For mobile layout*/
 @media (max-width: 768px) {
@@ -239,8 +247,12 @@ body{
 
   .btn-responsive {
     padding:2px 4px;
-    font-size:70%;
+    font-size:72%;
     line-height: 1.2;
+  }
+
+  .btn-mobile-submit{
+    width: 100%;
   }
 
   .checkout-comment-box{
