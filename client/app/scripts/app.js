@@ -106,7 +106,8 @@ angular
       })
       .state('checkout.revieworder', {
         url: '',
-        templateUrl: 'views/checkout_review_order.html'
+        templateUrl: 'views/checkout_review_order.html',
+        controller:'CheckoutReviewOrderCtrl'
       });
 
     $urlRouterProvider.otherwise('/landing');

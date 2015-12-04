@@ -6,7 +6,7 @@
 	<div class="feedback_form">
 		<div class="checkout_product" ng-repeat="obj in box.box.box_products_attributes">
 			<checkout-products-list item="obj"></checkout-products-list>
-			<checkout-return-details item="obj.returned_product_reason_attributes" ng-show="!obj.accepted"></checkout-return-details>
+			<checkout-return-details item="obj.returned_product_reason_attributes" ng-show="!obj.accepted && obj.product.feedback_required"></checkout-return-details>
 		</div>
 	</div>
 	<a ui-sref="checkout.revieworder"><button type="button" class="btn btn-success btn-responsive pull-right">Review your order</button></a>

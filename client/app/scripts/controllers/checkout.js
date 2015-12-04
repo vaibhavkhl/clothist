@@ -15,7 +15,7 @@ angular.module('clientApp')
       });
       // $scope.box = {
       //                   "box": {
-      //                     "payment_method":'online',
+      //                     "payment_method":'cash on pickup',
       //                     "id": 1,
       //                     "unique_identifier": "a58711ce2f95",
       //                     "box_products_attributes": [
@@ -23,14 +23,14 @@ angular.module('clientApp')
       //                       "id": 1,
       //                       "product_id": 1,
       //                       "accepted": true,
-      //                       "returned_product_reason_attributes": {"size": "tight","price":"low","color":"bright","style":"opt1"},
+      //                       "returned_product_reason_attributes": null,
       //                       "product": {
       //                       "id": 1,
       //                       "description": "blue tshirt",
       //                       "original_price": "1000.0",
       //                       "brand": "US Polo",
       //                       "sell_price": "700.0",
-      //                       "feedback_required": true
+      //                       "feedback_required": false
       //                     }
       //                   },
       //                   {
