@@ -15,7 +15,7 @@ angular.module('clientApp')
       });
       // $scope.box = {
       //                   "box": {
-      //                     "payment_method":'cash on pickup',
+      //                     "payment_method":'Cash on pickup',
       //                     "id": 1,
       //                     "unique_identifier": "a58711ce2f95",
       //                     "box_products_attributes": [

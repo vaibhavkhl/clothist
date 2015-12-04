@@ -108,6 +108,10 @@ angular
         url: '',
         templateUrl: 'views/checkout_review_order.html',
         controller:'CheckoutReviewOrderCtrl'
+      })
+      .state('checkout.thankyou', {
+        url: '',
+        templateUrl: 'views/checkout_thankyou.html'
       });
 
     $urlRouterProvider.otherwise('/landing');

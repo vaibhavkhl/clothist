@@ -13,24 +13,24 @@
 				<h4>Total:</h4>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-6">
-				<h4><i class="fa fa-inr"></i> {{totalPrice}}</h4>
+				<h4><i class="fa fa-inr"></i> {{box.box.totalPrice}}</h4>
 		</div>
 		<br>
 		<hr>
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-6">Select payment option:</div>
 			<div class="col-md-8 col-sm-8 col-xs-6">
-				  <label>
-				    <input type="radio" ng-model="box.box.payment_method" value="cash on pickup">
+				  <p>
+				    <input type="radio" ng-model="box.box.payment_method" value="Cash on pickup">
 				    Cash on pickup
-				  </label>     
-				  <label>
+				  </p>     
+				  <p>
 				    <input type="radio" ng-model="box.box.payment_method" value="Credit Card/Debit Card/Net Banking">
 					Credit Card/Debit Card/Net Banking
-				  </label>
+				  </p>
 			</div>	
 		</div>
 		<br>
-		<button type="button" class="btn btn-success btn-responsive pull-right">Proceed</button>
+		<a ui-sref="checkout.thankyou"><button type="button" class="btn btn-success btn-responsive pull-right">Proceed</button></a>
 	</div>
 </div>
