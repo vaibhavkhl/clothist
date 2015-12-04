@@ -1,10 +1,11 @@
 <div class="container">
+	<a ui-sref="checkout.products" ><div class="marginTop10">Back</div></a>
 	<div class="feedback_text">
 		<h3 class="grey-text">Order Summary</h3>
 	</div>
 	<div class="order_container">
-		<h4 class="grey-text">KEEPING</h4>
-		<div class="review_product" ng-repeat="item in box.box.box_products_attributes" ng-if="item.accepted">
+<!-- 		<h4 class="grey-text">KEEPING:</h4> -->
+		<div class="review_product marginTop10" ng-repeat="item in box.box.box_products_attributes" ng-if="item.accepted">
 			<checkout-review-list product="item"></checkout-review-list>
 		</div>
 		<hr>
@@ -19,7 +20,7 @@
 		<hr>
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-6">Select payment option:</div>
-			<div class="col-md-8 col-sm-8 col-xs-6">
+			<div class="col-md-4 col-sm-8 col-xs-6">
 				  <p>
 				    <input type="radio" ng-model="box.box.payment_method" value="Cash on pickup">
 				    Cash on pickup
@@ -28,9 +29,10 @@
 				    <input type="radio" ng-model="box.box.payment_method" value="Credit Card/Debit Card/Net Banking">
 					Credit Card/Debit Card/Net Banking
 				  </p>
+			</div>
+			<div class="col-md- col-sm-4 col-xs-12">
+				<a class="noHover" ui-sref="checkout.thankyou"><button type="button" class="btn btn-success pull-left btn-mobile-submit">Proceed</button></a>
 			</div>	
 		</div>
-		<br>
-		<a class="noHover" ui-sref="checkout.thankyou"><button type="button" class="btn btn-success pull-left btn-mobile-submit">Proceed</button></a>
 	</div>
 </div>

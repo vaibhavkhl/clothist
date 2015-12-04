@@ -217,12 +217,15 @@ body{
 .strike_through_price{
   text-decoration: line-through;
 }
-.checkout_product_brand{
+.checkout-product-brand{
   font-weight: lighter;
   margin: 0;
+  font-size: 17px;
 }
-.checkout_product_desc{
+.checkout-product-desc{
   margin-top: 0;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .checkout-comment-box{
@@ -232,6 +235,11 @@ body{
 .checkout-original-price{
   font-size: 14px;
   color: #999;
+}
+
+.checkout-feedback-title{
+  color: #333!important;
+  font-size: 22px;
 }
 /*-------------End---------------*/
 /*For mobile layout*/
@@ -245,12 +253,24 @@ body{
     margin: auto;
   }
 
+  .left-menu-bar{
+    font-size: 1.5em;
+    margin: 5px;
+  }
+  .app-title{
+    width: 73%!important;
+  }
   .btn-responsive {
     padding:2px 4px;
     font-size:72%;
     line-height: 1.2;
   }
 
+  .btn-responsive-medium{
+    padding: 5px 3px;
+    font-size: 82%;
+    line-height: 1.5;
+  }
   .btn-mobile-submit{
     width: 100%;
   }

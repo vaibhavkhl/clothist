@@ -3,11 +3,13 @@ angular.module('clientApp')
   	$scope.acceptedItems = [];
 
   	function getAcceptedItems(){
-	  	_.each($scope.box.box.box_products_attributes, function (obj){
-	  		if(obj.accepted){
-	  			$scope.acceptedItems.push(obj);
-	  		}
-	  	})
+      if($scope.box!=undefined){
+  	  	_.each($scope.box.box.box_products_attributes, function (obj){
+  	  		if(obj.accepted){
+  	  			$scope.acceptedItems.push(obj);
+  	  		}
+  	  	})
+      }
   	}
 
   	function calcSum(){
@@ -21,7 +23,9 @@ angular.module('clientApp')
 
   	$scope.calculateTotal = function(){
   		getAcceptedItems();
-  		$scope.box.box.totalPrice = calcSum();
+      if($scope.box!=undefined){
+  		  $scope.box.box.totalPrice = calcSum();
+      }
   	}
 
   	$scope.calculateTotal();
