@@ -60,14 +60,47 @@ npm install
 bower install
 grunt serve
 ```
-#### Deploy to Heroku
+### Heroku
+
+We have two environments in Heroku.
+
+#### Production
+```heroku info -a clothist```
+```
+=== clothist
+Addons:        heroku-postgresql:hobby-dev
+Dynos:         web: 1
+Git URL:       git@heroku.com:clothist.git
+Owner:         vaibhav.khl@gmail.com
+Region:        us
+Repo Size:     1 MB
+Slug Size:     30 MB
+Stack:         cedar-14
+Web URL:       https://clothist.herokuapp.com/
+```
+
+#### Staging
+```heroku info -a clothist-staging```
+```
+=== clothist-staging
+Addons:        heroku-postgresql:hobby-dev
+Dynos:         web: 1
+Git URL:       git@heroku.com:clothist-staging.git
+Owner:         vaibhav.khl@gmail.com
+Region:        us
+Repo Size:     629 kB
+Slug Size:     30 MB
+Stack:         cedar-14
+Web URL:       https://clothist-staging.herokuapp.com/
+```
+
 build frontend assests & push
 ```
 grunt build
 copy content of dist folder and paste it server/public
-git subtree push --prefix server heroku master
+git subtree push --prefix server staging master
 ```
-# E2E Testing with Protractor
+#### E2E Testing with Protractor
 
 1. Install protractor: npm install -g protractor
 2. Get an instance of selenium server: webdriver-manager update
@@ -76,7 +109,7 @@ git subtree push --prefix server heroku master
 5. Add a configuration file e.g protractor.conf.js
 6. Run the test: protractor protractor.conf.js
 
-#E2E Testing with Grunt
+#### E2E Testing with Grunt
 1. npm run selenium_setup
 2. npm run start_selenium_server
 3. grunt

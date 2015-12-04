@@ -2,7 +2,7 @@
 	<div class="col-md-6 col-sm-6 col-xs-6">
 		<p class="checkout_product_brand">{{item.product.brand}}</p>
 		<h4 class="checkout_product_desc">{{item.product.description}}</h4>
-		<div><i class="fa fa-inr"></i> {{item.product.sell_price}}</div>
+		<div><i class="fa fa-inr"></i> {{item.product.sell_price}} <span ng-show="parseToInt(item.product.sell_price) < parseToInt(item.product.original_price)" class="strike_through_price checkout-original-price">{{item.product.original_price}}</div>
 	</div>
 	<div class="col-md-6 col-sm-6 col-xs-6">
 		<div class="btn-group">

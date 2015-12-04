@@ -7,7 +7,9 @@ angular.module('clientApp')
   		},
   		templateUrl:'views/checkout_products_list.html',
   		link:function(scope){
-
+        scope.parseToInt = function (val){
+          return parseInt(val);
+        }
   		}
   	}
   });
