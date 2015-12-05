@@ -1,5 +1,17 @@
 # clothist
 
+### Git workflow & branches
+  Todo: Any commit in master branch will automatically deploy code to production.
+  Same for staging branch.
+  
+- Master -> We consider origin/master to be the main branch where the s
+  ource code of HEAD always reflects a production-ready state.
+
+- Staging -> This branch will have the code with the latest changes 
+  for the next production release. Tha changes should be merged to master by pull request.
+
+Read more http://nvie.com/posts/a-successful-git-branching-model
+
 Rails API & AngularJS SPA
 
 #### Dependencies
