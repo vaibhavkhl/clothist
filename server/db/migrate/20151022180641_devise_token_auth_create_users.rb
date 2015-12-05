@@ -41,6 +41,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
       t.string :phnno
       t.string :dob
       t.string :role
+      t.string :box_frequency
 
       ## Tokens
       t.text :tokens

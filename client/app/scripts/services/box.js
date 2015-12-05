@@ -8,7 +8,7 @@
  * Service in the clientApp.
  */
 angular.module('clientApp')
-  .service('box', function ($http, $auth) {
+  .service('boxService', function ($http, $auth) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     this.create = function(params) {
@@ -16,6 +16,11 @@ angular.module('clientApp')
     };
 
     this.getBoxByIdentifier = function(identifier) {
-      return $http.get($auth.apiUrl() + '/get_box_by_unique_identifier?unique_identifier=' + identifier);
+      return $http.get($auth.apiUrl() +
+        '/get_box_by_unique_identifier?unique_identifier=' + identifier);
+    }
+
+    this.createBoxByAdmin = function(params) {
+      return $http.post($auth.apiUrl() + '/create_box_by_admin', {box: params});
     }
   });

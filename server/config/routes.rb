@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :user, except: [:new, :edit]
     resources :box, except: [:new, :edit]
     resources :size_profiles, except: [:new, :edit]
+    resources :products, except: [:new, :edit]
     post 'create_box_by_admin', to: 'box#create_box_by_admin'
     get 'get_box_by_unique_identifier', to: 'box#get_box_by_unique_identifier'
   end
