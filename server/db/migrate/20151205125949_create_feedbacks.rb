@@ -3,7 +3,7 @@ class CreateFeedbacks < ActiveRecord::Migration
     create_table :feedbacks do |t|
       t.text :suggestion
       t.string :excites
-      t.integer :user_id
+      t.integer :box_id
 
       t.timestamps null: false
     end
