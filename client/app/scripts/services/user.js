@@ -14,4 +14,8 @@ angular.module('clientApp')
     this.getCurrentUser = function() {
       return $http.get($auth.apiUrl() + '/user/' + $rootScope.user.id);
     };
+
+    this.getAllUsers = function() {
+      return $http.get($auth.apiUrl() + '/user')
+    }
   });

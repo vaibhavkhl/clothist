@@ -8,18 +8,29 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('AdminCtrl', function ($scope, $auth, product, boxService) {
+  .controller('AdminCtrl', function ($scope, $auth, product, boxService, user) {
 
-    console.log($scope)
     activate();
     $scope.selectedBoxProducts = [];
-    $scope.selectedUser = null;
+    $scope.selectedUser = {};
     $scope.box = {};
+
+    function getAllUsers() {
+      user.getAllUsers().then(function(resp) {
+        $scope.users = resp.data.user;
+      });
+    }
 
     function activate() {
       product.getAllProducts().then(function(resp) {
         $scope.products = resp.data.products;
       });
+
+      getAllUsers();
+    }
+
+    $scope.selectUser = function(user) {
+      $scope.selectedUser = user;
     }
 
     $scope.createUser = function(params) {
@@ -30,9 +41,7 @@ angular.module('clientApp')
 
       $auth.submitRegistration(user)
         .then(function(response) {
-          console.log(response)
-          $scope.selectedUser = response.data.data;
-          console.log($scope.selectedUser)
+          getAllUsers();
         })
         .catch(function(resp) {
           console.log(resp);
@@ -52,8 +61,12 @@ angular.module('clientApp')
       })
       console.log('boxxxx params', box)
       boxService.createBoxByAdmin(box).then(function(resp) {
-        //generateLink();
+        generateLink(resp.data.box);
       })
+    }
+
+    var generateLink = function(box) {
+      $scope.link = 'clothist.herokuapp.com/#/checkout/' + box.unique_identifier;
     }
 
     // angular formly fields
