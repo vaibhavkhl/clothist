@@ -26,7 +26,7 @@ angular
       })
       .state('landing', {
         url: '/landing',
-        templateUrl: 'views/landing.html',
+        templateUrl: 'views/temp_landing.html',
         controller: 'LandingCtrl'
       })
       .state('signup', {
@@ -35,60 +35,20 @@ angular
         controller: 'SignupCtrl',
         abstract: true
       })
-      .state('signup.work', {
-        url: '/work',
-        templateUrl: 'views/work_preference.html',
-        controller: 'WorkPreferenceCtrl'
-      })
-      .state('signup.leisure', {
-        url: '/leisure',
-        templateUrl: 'views/leisure_preference.html',
-        controller: 'LeisurePreferenceCtrl'
-      })
-      .state('signup.dislike', {
-        url: '/dislike',
-        templateUrl: 'views/dislike_preference.html',
-        controller: 'DislikePreferenceCtrl'
-      })
-      .state('signup.patterns', {
-        url: '/patterns',
-        templateUrl: 'views/patterns_dislike_preference.html',
-        controller: 'PatternsDislikePreferenceCtrl'
-      })
-      .state('signup.cost', {
-        url: '/cost',
-        templateUrl: 'views/cost_preference.html',
-        controller: 'CostPreferenceCtrl'
-      })
       .state('signup.registration', {
         url: '/registration',
-        templateUrl: 'views/registration.html',
-        controller: 'RegistrationCtrl'
-      })
-      .state('home', {
-        url: '/home',
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl',
+          templateUrl: 'views/registration.html',
+          controller: 'RegistrationCtrl'
+        })
+      .state('admin', {
+        url: '/admin',
+        templateUrl: 'views/admin.html',
+        controller: 'AdminCtrl',
         resolve: {
           auth: function($auth) {
             return $auth.validateUser();
           }
         },
-      })
-      .state('home.sizeprofile', {
-        url: '/sizeprofile',
-        templateUrl: 'views/size_profile.html',
-        controller: 'SizeProfileCtrl'
-      })
-      .state('home.schedulebox', {
-        url: '/box',
-        templateUrl: 'views/schedule_box.html',
-        controller: 'ScheduleBoxCtrl'
-      })
-      .state('admin', {
-        url: '/admin',
-        templateUrl: 'views/admin.html',
-        controller: 'AdminCtrl'
       })
       .state('checkout', {
         url: '/checkout/:unique_identifier',
@@ -143,5 +103,14 @@ angular
       console.log('unauthorized');
       // $state.go('login');
     });
+
+    // $rootScope.$on('$stateChangeStart', function(event, toState, toParams,
+    //   fromState, fromParams) {
+    //     if (toState.name == 'admin') {
+    //       if ($rootScope.user.role !== 'admin') {
+    //         event.preventDefault();
+    //       }
+    //     }
+    //   })
 
   });

@@ -8,12 +8,22 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('AdminCtrl', function ($scope, $auth, product, boxService, user) {
+  .controller('AdminCtrl', function ($scope, $auth, product, boxService, user,
+    $rootScope, $state) {
 
+    checkAdmin();
     activate();
     $scope.selectedBoxProducts = [];
     $scope.selectedUser = {};
     $scope.box = {};
+
+    function checkAdmin() {
+      if ($rootScope.user.role == 'admin') {
+        $state.go('admin')
+      } else {
+        $state.go('landing')
+      }
+    }
 
     function getAllUsers() {
       user.getAllUsers().then(function(resp) {
@@ -28,6 +38,16 @@ angular.module('clientApp')
 
       getAllUsers();
     }
+
+    $scope.signOut = function() {
+      $auth.signOut()
+        .then(function(resp) {
+          // handle success response
+        })
+        .catch(function(resp) {
+          // handle error response
+        });
+    };
 
     $scope.selectUser = function(user) {
       $scope.selectedUser = user;

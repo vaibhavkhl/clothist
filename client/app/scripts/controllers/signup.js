@@ -20,8 +20,8 @@ angular.module('clientApp')
       var params = getUserParams();
       $auth.submitRegistration(params)
         .then(function(response) {
-          $rootScope.current_user = response.data.data;
-          $state.go('home')
+          $rootScope.current_user = response.data;
+          $state.go('/landing');
         })
         .catch(function(resp) {
           if (resp.data.errors) {
@@ -32,19 +32,18 @@ angular.module('clientApp')
     };
 
     var getUserParams = function() {
-      $scope.user.work_preferences_attributes =
-        getParams($scope.workpreference);
-      $scope.user.leisure_preferences_attributes =
-        getParams($scope.leisurepreference);
-      $scope.user.dislike_preferences_attributes =
-        getParams($scope.dislikepreference);
-      $scope.user.patterns_dislike_preferences_attributes =
-        getParams($scope.patternsdislikepreference);
-      $scope.user.cost_preferences_attributes =
-        getParams($scope.costpreference);
+      // $scope.user.work_preferences_attributes =
+      //   getParams($scope.workpreference);
+      // $scope.user.leisure_preferences_attributes =
+      //   getParams($scope.leisurepreference);
+      // $scope.user.dislike_preferences_attributes =
+      //   getParams($scope.dislikepreference);
+      // $scope.user.patterns_dislike_preferences_attributes =
+      //   getParams($scope.patternsdislikepreference);
+      // $scope.user.cost_preferences_attributes =
+      //   getParams($scope.costpreference);
 
       var params = {user: $scope.user};
-      console.log(params)
       return params;
     };
 

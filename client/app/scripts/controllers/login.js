@@ -8,13 +8,14 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope, $auth, $rootScope) {
+  .controller('LoginCtrl', function ($scope, $auth, $rootScope, $state) {
     $scope.user = {};
 
     $scope.submit = function() {
       $auth.submitLogin($scope.user)
         .then(function(resp) {
           $rootScope.current_user = resp;
+          $state.go('admin');
         })
         .catch(function(resp) {
           $scope.errors = resp.errors[0];
