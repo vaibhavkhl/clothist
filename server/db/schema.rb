@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151205125949) do
     t.string   "payment_method"
     t.string   "unique_identifier"
     t.text     "overall_feedback"
+    t.boolean  "processed"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,7 +63,7 @@ ActiveRecord::Schema.define(version: 20151205125949) do
   create_table "feedbacks", force: :cascade do |t|
     t.text     "suggestion"
     t.string   "excites"
-    t.integer  "user_id"
+    t.integer  "box_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -112,7 +113,8 @@ ActiveRecord::Schema.define(version: 20151205125949) do
     t.string   "size"
     t.string   "color"
     t.string   "price"
-    t.string   "have_similar"
+    t.string   "like_it_but"
+    t.text     "comments"
     t.integer  "box_product_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -160,6 +162,7 @@ ActiveRecord::Schema.define(version: 20151205125949) do
     t.string   "phnno"
     t.string   "dob"
     t.string   "role"
+    t.string   "box_frequency"
     t.text     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
