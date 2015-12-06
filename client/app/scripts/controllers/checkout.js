@@ -9,15 +9,16 @@
  */
 angular.module('clientApp')
   .controller('CheckoutCtrl', function ($scope, $stateParams, boxService, $state) {
+
       boxService.getBoxByIdentifier($stateParams.unique_identifier)
         .then(function(resp) {
           if (_.isNull(resp.data) || resp.data.box.processed) {
             $state.go('error');
           }
-
           $scope.box = resp.data.box;
           console.log($scope.box)
         });
+
       // $scope.box = {
       //                   "box": {
       //                     "payment_method":'Cash on pickup',

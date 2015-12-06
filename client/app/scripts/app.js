@@ -71,7 +71,8 @@ angular
       })
       .state('checkout.thankyou', {
         url: '',
-        templateUrl: 'views/checkout_thankyou.html'
+        templateUrl: 'views/checkout_thankyou.html',
+        controller:'CheckoutThankYouCtrl'
       })
       .state('error', {
         url: '/error',

@@ -4,6 +4,7 @@ class CreateFeedbacks < ActiveRecord::Migration
       t.text :suggestion
       t.string :excites
       t.integer :box_id
+      t.string :box_frequency
 
       t.timestamps null: false
     end

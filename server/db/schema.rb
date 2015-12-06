@@ -64,8 +64,9 @@ ActiveRecord::Schema.define(version: 20151205125949) do
     t.text     "suggestion"
     t.string   "excites"
     t.integer  "box_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "box_frequency"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "leisure_preferences", force: :cascade do |t|

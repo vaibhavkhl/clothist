@@ -18,11 +18,12 @@ angular.module('clientApp')
     $scope.box = {};
 
     function checkAdmin() {
-      if ($rootScope.user.role == 'admin') {
-        $state.go('admin')
-      } else {
-        $state.go('landing')
-      }
+      console.log($rootScope)
+      // if ($rootScope.current_user.role == 'admin') {
+      //   $state.go('admin')
+      // } else {
+      //   $state.go('landing')
+      // }
     }
 
     function getAllUsers() {
