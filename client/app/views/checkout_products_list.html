@@ -2,12 +2,29 @@
 	<div class="col-md-6 col-sm-6 col-xs-6">
 		<p class="checkout-product-brand">{{item.product.brand}}</p>
 		<h4 class="checkout-product-desc">{{item.product.description}}</h4>
-		<div><i class="fa fa-inr"></i> {{item.product.sell_price}} <span ng-show="parseToInt(item.product.sell_price) < parseToInt(item.product.original_price)" class="strike_through_price checkout-original-price">{{item.product.original_price}}</div>
+		<div>
+			<i class="fa fa-inr"></i>
+			{{item.product.sell_price}}
+			<span
+				ng-show="parseToInt(item.product.sell_price) < parseToInt(item.product.original_price)"
+				class="strike_through_price checkout-original-price">
+				{{item.product.original_price}}
+			</span>
+		</div>
 	</div>
 	<div class="col-md-6 col-sm-6 col-xs-6">
 		<div class="btn-group">
-	        <label class="btn btn-grey btn-responsive-medium" ng-class="{'btn-dark-grey':item.accepted}" ng-model="item.accepted" uib-btn-radio="true">Keep it!</label>
-	        <label class="btn btn-grey btn-responsive-medium" ng-class="{'btn-dark-grey':!item.accepted}" ng-model="item.accepted" uib-btn-radio="false">Return it!</label>
+	        <label class="btn btn-grey btn-responsive-medium"
+						ng-class="{'btn-dark-grey':item.accepted}"
+						ng-model="item.accepted" uib-btn-radio="true">
+						Keep it!
+					</label>
+	        <label class="btn btn-grey btn-responsive-medium"
+						ng-class="{'btn-dark-grey':!item.accepted}"
+						ng-model="item.accepted"
+						uib-btn-radio="false">
+						Return it!
+					</label>
 	    </div>
 	</div>
 </div>

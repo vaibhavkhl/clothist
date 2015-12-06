@@ -10,6 +10,7 @@ class CreateBoxes < ActiveRecord::Migration
       t.string :payment_method
       t.string :unique_identifier
       t.text :overall_feedback
+      t.boolean :processed
       t.references :user, index: true
 
       t.timestamps

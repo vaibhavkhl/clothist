@@ -112,6 +112,10 @@ angular
       .state('checkout.thankyou', {
         url: '',
         templateUrl: 'views/checkout_thankyou.html'
+      })
+      .state('error', {
+        url: '/error',
+        templateUrl: 'views/error.html'
       });
 
     $urlRouterProvider.otherwise('/landing');
@@ -123,7 +127,7 @@ angular
   .run(function ($rootScope, $state) {
 
     $rootScope.$on('auth:login-success', function(ev) {
-      $state.go('home');
+      // $state.go('home');
     });
 
     $rootScope.$on('auth:logout-success', function(ev) {
@@ -132,12 +136,12 @@ angular
 
     $rootScope.$on('auth:validation-success', function() {
       console.log('validated, user is allowed');
-      $state.go('home');
+      // $state.go('home');
     });
 
     $rootScope.$on('auth:invalid', function() {
       console.log('unauthorized');
-      $state.go('login');
+      // $state.go('login');
     });
 
   });

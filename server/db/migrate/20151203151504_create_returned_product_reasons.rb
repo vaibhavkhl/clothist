@@ -4,7 +4,8 @@ class CreateReturnedProductReasons < ActiveRecord::Migration
       t.string :size
       t.string :color
       t.string :price
-      t.string :have_similar
+      t.string :like_it_but
+      t.text :comments
       t.references :box_product, index: true
 
       t.timestamps null: false

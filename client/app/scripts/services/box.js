@@ -23,4 +23,8 @@ angular.module('clientApp')
     this.createBoxByAdmin = function(params) {
       return $http.post($auth.apiUrl() + '/create_box_by_admin', {box: params});
     }
+
+    this.update = function(params) {
+      return $http.patch($auth.apiUrl() + '/box/' + params.id, {box: params});
+    }
   });

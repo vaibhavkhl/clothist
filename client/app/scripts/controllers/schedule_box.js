@@ -8,9 +8,9 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('ScheduleBoxCtrl', function ($scope, box, $rootScope) {
+  .controller('ScheduleBoxCtrl', function ($scope, boxService, $rootScope) {
     $scope.scheduleBox = function() {
       $scope.box.user_id = $rootScope.user.id;
-      box.create($scope.box);
+      boxService.create($scope.box);
     };
   });

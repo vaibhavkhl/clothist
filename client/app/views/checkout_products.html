@@ -1,14 +1,25 @@
 <div class="container">
-	<a ui-sref="checkout.welcome" ><div class="marginTop10">Back</div></a>
+	<a ui-sref="checkout.welcome" >
+		<div class="marginTop10">Back</div>
+	</a>
 	<div class="feedback_text">
 		<h3 class="grey-text">Its time to checkout!</h3>
-		<p>Let us know what you're keeping, and what you are not. <br>Your feedback is important to make your future collections even better</p>
+		<p>Let us know what you're keeping, and what you are not.
+			<br>Your feedback is important to make your future collections even better
+		</p>
 	</div>
 	<div class="feedback_form">
-		<div class="checkout_product" ng-repeat="obj in box.box.box_products_attributes">
-			<checkout-products-list item="obj"></checkout-products-list>
-			<checkout-return-details item="obj.returned_product_reason_attributes" ng-show="!obj.accepted && obj.product.feedback_required"></checkout-return-details>
+		<div class="checkout_product"
+			ng-repeat="product in box.box_products">
+			<checkout-products-list item="product"></checkout-products-list>
+			<checkout-return-details item="product.returned_product_reason"
+				ng-show="!product.accepted && product.product.feedback_required">
+			</checkout-return-details>
 		</div>
 	</div>
-	<a class="noHover" ui-sref="checkout.revieworder"><button type="button" class="btn btn-success pull-left btn-mobile-submit">Review your order</button></a>
+	<a class="noHover" ui-sref="checkout.revieworder">
+		<button type="button" class="btn btn-success pull-left btn-mobile-submit">
+			Review your order
+		</button>
+	</a>
 </div>

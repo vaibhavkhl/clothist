@@ -51,9 +51,10 @@ class BoxController < ApplicationController
 
     def box_product_params
       params.require(:box).permit(:delivery_date_requested, :return_datetime,
-        :payment_method, box_products_attributes: [:id, :product_id, :accepted,
+        :payment_method, :processed, :products_bought_cost,
+          box_products_attributes: [:id, :product_id, :accepted,
           returned_product_reason_attributes: [:size, :color, :price,
-            :have_similar]
+            :like_it_but, :comments]
           ])
     end
 
