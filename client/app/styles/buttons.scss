@@ -1,0 +1,29 @@
+.btn-grey, .btn-grey:hover{
+  background-color: #ccc;
+  color: #fff;
+  font-weight: semi-bold;
+}
+
+.btn-dark-grey, .btn-dark-grey:hover{
+  background-color: #4d4d4d;
+  color: #fff;
+}
+
+
+
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:72%;
+    line-height: 1.2;
+  }
+
+  .btn-responsive-medium{
+    padding: 5px 3px;
+    font-size: 82%;
+    line-height: 1.5;
+  }
+  .btn-mobile-submit{
+    width: 100%;
+  }
+}
