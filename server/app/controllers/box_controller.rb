@@ -1,5 +1,6 @@
 class BoxController < ApplicationController
 
+  before_action :authenticate_user!, except: :get_box_by_unique_identifier
   def index
    @boxes = Box.all
    render json: @boxes, each_serializer: BoxSerializer
@@ -30,7 +31,12 @@ class BoxController < ApplicationController
 
   def get_box_by_unique_identifier
     @box = Box.find_by_unique_identifier(params[:unique_identifier])
-    render json: @box
+
+    if @box
+      render json: @box
+    else
+      render json: {errors: 'not found'}, status: 404
+    end
   end
 
   def create_box_by_admin

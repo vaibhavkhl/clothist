@@ -79,11 +79,11 @@ angular.module('clientApp')
       box.box_products_attributes = _.map($scope.selectedBoxProducts,
         function(product) {
           return {product_id: product.id};
-      })
-      console.log('boxxxx params', box)
+      });
+
       boxService.createBoxByAdmin(box).then(function(resp) {
         generateLink(resp.data.box);
-      })
+      });
     }
 
     var generateLink = function(box) {

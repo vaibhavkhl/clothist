@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('clientApp')
 .controller('CheckoutReviewOrderCtrl', function ($scope, $stateParams, boxService) {
   $scope.acceptedProducts = [];

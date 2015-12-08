@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('clientApp')
   .directive('checkoutProductsList', function () {
   	return {

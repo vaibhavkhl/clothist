@@ -21,10 +21,10 @@ angular.module('clientApp')
       $auth.submitRegistration(params)
         .then(function(response) {
           $rootScope.current_user = response.data;
-          $state.go('/landing');
+          $state.go('landing');
         })
         .catch(function(resp) {
-          if (resp.data.errors) {
+          if (resp.data && resp.data.errors) {
             $scope.errors = resp.data.errors.full_messages[0];
           }
           $scope.errors = 'Some error occured, please try again.'

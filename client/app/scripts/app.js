@@ -92,7 +92,8 @@ angular
     });
 
     $rootScope.$on('auth:logout-success', function(ev) {
-      console.log('goodbye');
+      console.log('logged out')
+      $state.go('login');
     });
 
     $rootScope.$on('auth:validation-success', function() {
@@ -102,7 +103,7 @@ angular
 
     $rootScope.$on('auth:invalid', function() {
       console.log('unauthorized');
-      // $state.go('login');
+      $state.go('login');
     });
 
     // $rootScope.$on('$stateChangeStart', function(event, toState, toParams,

@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 /**
  * @ngdoc function
@@ -12,12 +12,15 @@ angular.module('clientApp')
 
       boxService.getBoxByIdentifier($stateParams.unique_identifier)
         .then(function(resp) {
-          if (_.isNull(resp.data) || resp.data.box.processed) {
+          if (resp.data.box.processed) {
             $state.go('error');
           }
           $scope.box = resp.data.box;
-          console.log($scope.box)
-        });
+        })
+        .catch(function(resp) {
+          console.log(resp.data.errors);
+          $state.go('error');
+        })
 
       // $scope.box = {
       //                   "box": {
