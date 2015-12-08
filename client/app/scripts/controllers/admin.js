@@ -18,7 +18,6 @@ angular.module('clientApp')
     $scope.box = {};
 
     function checkAdmin() {
-      console.log($rootScope)
       // if ($rootScope.current_user.role == 'admin') {
       //   $state.go('admin')
       // } else {

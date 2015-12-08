@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
-  before_save -> { skip_confirmation! }
+  #before_save -> { skip_confirmation! }
 
   has_many :work_preferences
   accepts_nested_attributes_for :work_preferences
